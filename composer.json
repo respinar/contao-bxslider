@@ -24,7 +24,7 @@
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/bxlisder"
+                "": "system/modules/bxslider"
             },
             "transifex": {
                 "project": "contao-bxslider",
