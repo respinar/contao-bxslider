@@ -497,19 +497,16 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bx_slideWidth'] = array
  * Class tl_module_bxslider
  *
  * Provide miscellaneous methods that are used by the data configuration array.
- * @copyright  Hamid Abbaszadeh 2014
- * @author     Hamid Abbaszadeh <http://respinar.com>
- * @package    bxslider
  */
 class tl_module_bxslider extends Backend
 {
 	/**
-	 * Return all links templates as array
-	 * @param object
+	 * Return all news templates as array
+	 *
 	 * @return array
 	 */
-	public function getSlideTemplates(DataContainer $dc)
+	public function getSlideTemplates()
 	{
-		return $this->getTemplateGroup('bxslider_', $dc->activeRecord->pid);
+		return $this->getTemplateGroup('bxslider_');
 	}
 }
