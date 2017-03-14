@@ -10,6 +10,11 @@
  */
 
 /**
+ * Load tl_module language file
+ */
+\System::loadLanguageFile('tl_module');
+
+/**
  * Add palettes to tl_module
  */
 $GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '{title_legend},name,headline,type;{bx_slider_legend},bx_slider;{template_legend},bx_slide_template,customTpl,size;{bx_options_legend},bx_mode,bx_speed,bx_slideMargin,bx_startSlide,bx_infiniteLoop,bx_responsive,bx_captions,bx_randomStart,bx_video,bx_hideControlOnEnd,bx_useCSS,bx_oneToOneTouch,bx_easing,bx_preloadImages,bx_ticker,bx_adaptiveHeight,bx_touchEnabled,bx_preventDefaultSwipeX,bx_preventDefaultSwipeY;{bx_pager_legend},bx_pager;{bx_controls_legend},bx_controls,bx_autoControls;{bx_auto_legend},bx_auto;{bx_carousel_legend:hide},bx_minSlides,bx_maxSlides,bx_moveSlides,bx_slideWidth;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
