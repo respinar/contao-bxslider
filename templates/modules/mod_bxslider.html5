@@ -1,5 +1,6 @@
+<?php $this->extend('block_searchable'); ?>
 
-<div class="<?php echo $this->class ?> block"<?php echo $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<?php $this->block('content'); ?>
 
   <?php if (empty($this->slides)): ?>
     <p class="noslide"><?= $this->empty; ?></p>
@@ -7,9 +8,7 @@
     <ul class="bxslider">
       <?php echo implode('', $this->slides); ?>    
     </ul>
-  <?php endif; ?> 
-
-</div>
+  
 
 <script>
   $('.bxslider').bxSlider({
@@ -144,3 +143,7 @@
 
   });
 </script>
+
+<?php endif; ?> 
+
+<?php $this->endblock(); ?>
