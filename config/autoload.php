@@ -15,7 +15,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-	'bxSlider'
+	'Respinar\bxSlider'
 ));
 
 
@@ -25,11 +25,11 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Modules
-	'bxSlider\ModulebxSlider'     => 'system/modules/bxslider/modules/ModulebxSlider.php',
+	'Respinar\bxSlider\ModulebxSlider'     => 'system/modules/bxslider/library/Respinar/bxSlider/FrontendModules/ModulebxSlider.php',
 
 	// Models
-	'bxSlider\bxSliderModel'      => 'system/modules/bxslider/models/bxSliderModel.php',
-	'bxSlider\bxSliderSlideModel' => 'system/modules/bxslider/models/bxSliderSlideModel.php',
+	'Respinar\bxSlider\bxSliderModel'      => 'system/modules/bxslider/library/Respinar/bxSlider/Models/bxSliderModel.php',
+	'Respinar\bxSlider\bxSliderSlideModel' => 'system/modules/bxslider/library/Respinar/bxSlider/Models/bxSliderSlideModel.php',
 ));
 
 
