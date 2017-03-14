@@ -1,3 +1,13 @@
 <li>
+
+  <?php if ($this->href): ?>
+    <a href="<?= $this->href ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle ?>"<?php endif; ?><?= $this->attributes ?>>
+  <?php endif; ?>
+ 
   <?php $this->insert('picture_default', $this->picture); ?>  
+
+  <?php if ($this->href): ?>
+    </a>
+  <?php endif; ?>
+
 </li>
