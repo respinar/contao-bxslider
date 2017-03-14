@@ -24,8 +24,14 @@ ClassLoader::addNamespaces(array
  */
 ClassLoader::addClasses(array
 (
+	// Class
+	'Respinar\bxSlider\bxSlider'           => 'system/modules/bxslider/library/Respinar/bxSlider/bxSlider.php',
+
 	// Modules
 	'Respinar\bxSlider\ModulebxSlider'     => 'system/modules/bxslider/library/Respinar/bxSlider/FrontendModules/ModulebxSlider.php',
+
+	// Elements
+	'Respinar\bxSlider\ContentbxSlider'    => 'system/modules/bxslider/library/Respinar/bxSlider/FrontendElements/ContentbxSlider.php',
 
 	// Models
 	'Respinar\bxSlider\bxSliderModel'      => 'system/modules/bxslider/library/Respinar/bxSlider/Models/bxSliderModel.php',
@@ -38,6 +44,7 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_bxslider'   => 'system/modules/bxslider/templates/module',
+	'mod_bxslider'   => 'system/modules/bxslider/templates/modules',
+	'ce_bxslider'    => 'system/modules/bxslider/templates/elements',
 	'bxslider_slide' => 'system/modules/bxslider/templates/slide',
 ));

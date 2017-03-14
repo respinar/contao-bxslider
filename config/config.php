@@ -22,3 +22,8 @@
  * Front end modules
  */
 $GLOBALS['FE_MOD']['miscellaneous']['bxslider']   = 'ModulebxSlider';
+
+/**
+ * Front end modules
+ */
+$GLOBALS['TL_CTE']['miscellaneous']['bxslider']   = 'ContentbxSlider';
