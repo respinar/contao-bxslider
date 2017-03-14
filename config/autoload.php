@@ -11,32 +11,11 @@
 
 
 /**
- * Register the namespaces
+ * Register PSR-0 namespaces
  */
-ClassLoader::addNamespaces(array
-(
-	'Respinar\bxSlider'
-));
-
-
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array
-(
-	// Class
-	'Respinar\bxSlider\bxSlider'           => 'system/modules/bxslider/library/Respinar/bxSlider/bxSlider.php',
-
-	// Modules
-	'Respinar\bxSlider\ModulebxSlider'     => 'system/modules/bxslider/library/Respinar/bxSlider/FrontendModules/ModulebxSlider.php',
-
-	// Elements
-	'Respinar\bxSlider\ContentbxSlider'    => 'system/modules/bxslider/library/Respinar/bxSlider/FrontendElements/ContentbxSlider.php',
-
-	// Models
-	'Respinar\bxSlider\bxSliderModel'      => 'system/modules/bxslider/library/Respinar/bxSlider/Models/bxSliderModel.php',
-	'Respinar\bxSlider\bxSliderSlideModel' => 'system/modules/bxslider/library/Respinar/bxSlider/Models/bxSliderSlideModel.php',
-));
+if (class_exists('NamespaceClassLoader')) {
+   // NamespaceClassLoader::add('Respinar\bxSlider', 'system/modules/bxslider/library');
+}
 
 
 /**
