@@ -13,15 +13,13 @@
 /**
  * Namespace
  */
-namespace Respinar\bxSlider\Frontend\Modules;
+namespace Respinar\BxSlider;
 
-use Respinar\bxSlider\Model\bxSliderModel;
-use Respinar\bxSlider\Model\bxSliderSlideModel;
 
 /**
  * Class ModulebxSlider
  */
-class ModulebxSlider extends \Module
+class ModuleBxSlider extends \Module
 {
 
 	/**
@@ -71,7 +69,7 @@ class ModulebxSlider extends \Module
 	protected function compile()
 	{		
 
-		$intTotal = bxSliderSlideModel::countPublishedByPid($this->bx_slider);
+		$intTotal = \BxSliderSlideModel::countPublishedByPid($this->bx_slider);
 
 		if ($intTotal < 1)
 		{
@@ -80,12 +78,12 @@ class ModulebxSlider extends \Module
 			return;
 		}
 
-		$objSlides = bxSliderSlideModel::findPublishedByPid($this->bx_slider);
+		$objSlides = \BxSliderSlideModel::findPublishedByPid($this->bx_slider);
 
 		// No items found
 		if ($objSlides !== null)
 		{
-			$bxSlider = new bxSlider();
+			$bxSlider = new BxSlider();
 
 			$bxSlider->bx_slide_template = $this->bx_slide_template;
 			$bxSlider->imgSize = $this->imgSize;

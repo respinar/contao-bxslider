@@ -13,12 +13,12 @@
 /**
  * Namespace
  */
-namespace Respinar\bxSlider\Frontend;
+namespace Respinar\BxSlider;
 
 /**
  * Class BxSlider
  */
-class bxSlider extends \Frontend
+class BxSlider extends \Frontend
 {
 
 	/**

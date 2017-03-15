@@ -21,9 +21,9 @@
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['bxslider']   = 'Respinar\bxSlider\Frontend\Modules\ModulebxSlider';
+$GLOBALS['FE_MOD']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\ModuleBxSlider';
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_CTE']['miscellaneous']['bxslider']   = 'Respinar\bxSlider\Frontend\Elements\ContentbxSlider';
+$GLOBALS['TL_CTE']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\ContentBxSlider';

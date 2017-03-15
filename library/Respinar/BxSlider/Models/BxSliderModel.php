@@ -13,12 +13,12 @@
 /**
  * Namespace
  */
-namespace Respinar\bxSlider\Model;
+namespace Respinar\BxSlider;
 
 /**
- * Class bxSliderModel
+ * Class BxSliderModel
  */
-class bxSliderModel extends \Model
+class BxSliderModel extends \Model
 {
 
 	/**

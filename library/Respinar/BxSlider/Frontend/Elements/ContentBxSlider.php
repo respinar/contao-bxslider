@@ -13,16 +13,15 @@
 /**
  * Namespace
  */
-namespace Respinar\bxSlider\Frontend\Elements;
+namespace Respinar\BxSlider;
 
-use Respinar\bxSlider\Model\bxSliderModel;
-use Respinar\bxSlider\Model\bxSliderSlideModel;
-
+use Respinar\BxSlider\BxSliderModel;
+use Respinar\BxSlider\BxSliderSlideModel;
 
 /**
  * Class ModulebxSlider
  */
-class ContentbxSlider extends \ContentElement
+class ContentBxSlider extends \ContentElement
 {
 
 	/**
@@ -43,7 +42,7 @@ class ContentbxSlider extends \ContentElement
 
 			$objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['bxslider'][0]) . ' ###';
 
-			$objbxSlider = bxSliderModel::findBy('id',$this->bx_slider);
+			$objbxSlider = \BxSliderModel::findBy('id',$this->bx_slider);
 
 
 			$objTemplate->title = $this->headline;
@@ -76,7 +75,7 @@ class ContentbxSlider extends \ContentElement
 	protected function compile()
 	{		
 
-		$intTotal = bxSliderSlideModel::countPublishedByPid($this->bx_slider);
+		$intTotal = \BxSliderSlideModel::countPublishedByPid($this->bx_slider);
 
 		if ($intTotal < 1)
 		{
@@ -85,12 +84,12 @@ class ContentbxSlider extends \ContentElement
 			return;
 		}
 
-		$objSlides = bxSliderSlideModel::findPublishedByPid($this->bx_slider);
+		$objSlides = \BxSliderSlideModel::findPublishedByPid($this->bx_slider);
 
 		// No items found
 		if ($objSlides !== null)
 		{
-			$bxSlider = new bxSlider();
+			$bxSlider = new BxSlider();
 
 			$bxSlider->bx_slide_template = $this->bx_slide_template;
 			$bxSlider->imgSize = $this->size;

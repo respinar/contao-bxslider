@@ -1,21 +1,35 @@
 <?php
 
 /**
- * bxSlider Extension for Contao Open Source CMS
+ * Contao Open Source CMS
  *
- * @copyright  Copyright (c) 2017, Respinar
- * @author     Respinar <info@respinar.com>
- * @license    https://opensource.org/licenses/lgpl-3.0.html LGPL
- * @link       https://respinar.com/
+ * Copyright (c) 2005-2017 Leo Feyer
+ *
+ * @license LGPL-3.0+
  */
 
 
 /**
- * Register PSR-0 namespaces
+ * Register the namespaces
  */
-if (class_exists('NamespaceClassLoader')) {
-   // NamespaceClassLoader::add('Respinar\bxSlider', 'system/modules/bxslider/library');
-}
+ClassLoader::addNamespaces(array
+(
+	'Respinar\BxSlider',
+));
+
+
+/**
+ * Register the classes
+ */
+ClassLoader::addClasses(array
+(
+	// Library
+	'Respinar\BxSlider\ContentBxSlider'    => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Elements/ContentBxSlider.php',
+	'Respinar\BxSlider\ModuleBxSlider'     => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Modules/ModuleBxSlider.php',
+	'Respinar\BxSlider\BxSlider'           => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/BxSlider.php',
+	'Respinar\BxSlider\BxSliderModel'      => 'system/modules/bxslider/library/Respinar/BxSlider/Models/BxSliderModel.php',
+	'Respinar\BxSlider\BxSliderSlideModel' => 'system/modules/bxslider/library/Respinar/BxSlider/Models/BxSliderSlideModel.php',
+));
 
 
 /**
@@ -23,7 +37,7 @@ if (class_exists('NamespaceClassLoader')) {
  */
 TemplateLoader::addFiles(array
 (
-	'mod_bxslider'   => 'system/modules/bxslider/templates/modules',
-	'ce_bxslider'    => 'system/modules/bxslider/templates/elements',
 	'bxslider_slide' => 'system/modules/bxslider/templates/slide',
+	'ce_bxslider'    => 'system/modules/bxslider/templates/elements',
+	'mod_bxslider'   => 'system/modules/bxslider/templates/modules',
 ));
