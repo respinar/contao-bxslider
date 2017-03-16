@@ -24,11 +24,11 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Library
-	'Respinar\BxSlider\ContentBxSlider'    => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Elements/ContentBxSlider.php',
-	'Respinar\BxSlider\ModuleBxSlider'     => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Modules/ModuleBxSlider.php',
+	'Respinar\BxSlider\ContentBxSlider'    => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Element/ContentBxSlider.php',
+	'Respinar\BxSlider\ModuleBxSlider'     => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/Module/ModuleBxSlider.php',
 	'Respinar\BxSlider\BxSlider'           => 'system/modules/bxslider/library/Respinar/BxSlider/Frontend/BxSlider.php',
-	'Respinar\BxSlider\BxSliderModel'      => 'system/modules/bxslider/library/Respinar/BxSlider/Models/BxSliderModel.php',
-	'Respinar\BxSlider\BxSliderSlideModel' => 'system/modules/bxslider/library/Respinar/BxSlider/Models/BxSliderSlideModel.php',
+	'Respinar\BxSlider\BxSliderModel'      => 'system/modules/bxslider/library/Respinar/BxSlider/Model/BxSliderModel.php',
+	'Respinar\BxSlider\BxSliderSlideModel' => 'system/modules/bxslider/library/Respinar/BxSlider/Model/BxSliderSlideModel.php',
 ));
 
 
