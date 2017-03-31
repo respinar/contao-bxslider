@@ -84,7 +84,13 @@ class ContentBxSlider extends \ContentElement
 			return;
 		}
 
+		$objbxSlider = \BxSliderModel::findBy('id',$this->bx_slider);
+
+		$this->Template->setData($objbxSlider->row());
+
 		$objSlides = \BxSliderSlideModel::findPublishedByPid($this->bx_slider);
+
+		
 
 		// No items found
 		if ($objSlides !== null)
