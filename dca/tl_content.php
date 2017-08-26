@@ -12,7 +12,7 @@
 /**
  * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '{title_legend},name,headline,type;{bx_slider_legend},bx_slider;{template_legend},bx_slide_template,customTpl,size;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '{title_legend},type,headline;{bx_slider_legend},bx_slider;{template_legend},bx_slide_template,customTpl,size;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
