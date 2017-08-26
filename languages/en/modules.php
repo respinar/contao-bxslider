@@ -20,3 +20,9 @@ $GLOBALS['TL_LANG']['MOD']['bxslider'] = array('bxSlider', 'Manage Slider and sl
  * Front end modules
  */
 $GLOBALS['TL_LANG']['FMD']['bxslider'] = array('bxSlider', 'Adds a slider to the website.');
+
+
+/**
+ * Front end content elements
+ */
+$GLOBALS['TL_LANG']['CTE']['bxslider'] = array('bxSlider', 'Adds a slider to the website.');
