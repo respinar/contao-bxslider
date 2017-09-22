@@ -19,11 +19,17 @@
 ));
 
 /**
- * Front end modules
+ * Register models
  */
-$GLOBALS['FE_MOD']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\ModuleBxSlider';
+ $GLOBALS['TL_MODELS']['tl_bxslider']       = '\Respinar\BxSlider\Model\BxSliderModel';
+ $GLOBALS['TL_MODELS']['tl_bxslider_slide'] = '\Respinar\BxSlider\Model\BxSliderSlideModel'; 
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_CTE']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\ContentBxSlider';
+$GLOBALS['FE_MOD']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\Frontend\Module\ModuleBxSlider';
+
+/**
+ * Front end modules
+ */
+$GLOBALS['TL_CTE']['miscellaneous']['bxslider']   = 'Respinar\BxSlider\Frontend\Element\ContentBxSlider';
