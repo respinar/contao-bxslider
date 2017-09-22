@@ -13,7 +13,7 @@
 /**
  * Namespace
  */
-namespace Respinar\BxSlider;
+namespace Respinar\BxSlider\Frontend;
 
 /**
  * Class BxSlider
