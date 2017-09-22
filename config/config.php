@@ -21,8 +21,8 @@
 /**
  * Register models
  */
- $GLOBALS['TL_MODELS']['tl_bxslider']       = '\Respinar\BxSlider\Model\BxSliderModel';
- $GLOBALS['TL_MODELS']['tl_bxslider_slide'] = '\Respinar\BxSlider\Model\BxSliderSlideModel'; 
+ $GLOBALS['TL_MODELS']['tl_bxslider']       = 'Respinar\BxSlider\Model\BxSliderModel';
+ $GLOBALS['TL_MODELS']['tl_bxslider_slide'] = 'Respinar\BxSlider\Model\BxSliderSlideModel'; 
 
 /**
  * Front end modules
