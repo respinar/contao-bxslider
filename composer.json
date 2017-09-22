@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\bxSlider\\": "library/"
+            "Respinar\\BxSlider\\": "library/"
         }
     },
     "extra": {
