@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\BxSlider\\": "library/"
+            "Respinar\\BxSlider\\": "src/library/"
         }
     },
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/bxslider"
+                "src": "system/modules/bxslider"
             },
             "transifex": {
                 "project": "contao-bxslider",
