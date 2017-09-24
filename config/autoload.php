@@ -10,14 +10,6 @@
 
 
 /**
- * Register PSR-0 namespaces
- */
- if (class_exists('NamespaceClassLoader')) {
-    NamespaceClassLoader::add('Respinar\BxSlider', 'system/modules/bxslider/library');
-}
-
-
-/**
  * Register the templates
  */
 TemplateLoader::addFiles(array
