@@ -1,6 +1,5 @@
 {
     "name": "respinar/contao-bxslider",
-    "version": "dev-master",
     "description": "bxSlider module for Contao",
     "keywords": ["contao", "bxSlider", "Carousel", "Slider"],
     "type": "contao-module",
