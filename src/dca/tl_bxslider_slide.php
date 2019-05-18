@@ -111,13 +111,7 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('published'),
-		'default'                     => '{title_legend},title;{image_legend},singleSRC,alt,size,imageUrl;{text_legend},text;{publish_legend},published'
-	),
-
-	// Subpalettes
-	'subpalettes' => array
-	(
-		'published'                   => 'start,stop'
+		'default'                     => '{title_legend},title;{image_legend},singleSRC,alt,size,imageUrl;{text_legend},text;{publish_legend},published,start,stop'
 	),
 
 	// Fields
