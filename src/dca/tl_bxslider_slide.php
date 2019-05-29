@@ -110,8 +110,14 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('published'),
-		'default'                     => '{title_legend},title;{image_legend},singleSRC,alt,size,imageUrl;{text_legend},text;{publish_legend},published,start,stop'
+		'__selector__'                => array('overwriteMeta'),
+		'default'                     => '{title_legend},title;{image_legend},singleSRC,size,overwriteMeta;{text_legend},text;{publish_legend},published,start,stop'
+	),
+
+	// Subpalettes
+	'subpalettes' => array
+	(
+		'overwriteMeta'               => 'alt,imageTitle,imageUrl,caption'
 	),
 
 	// Fields
@@ -158,13 +164,21 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 			'eval'                    => array('mandatory'=>true,'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => "binary(16) NULL"
 		),
+		'overwriteMeta' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['overwriteMeta'],
+			'exclude'                 => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 clr'),
+			'sql'                     => "char(1) NOT NULL default ''"
+		),
 		'alt' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['alt'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'long clr'),
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),	
 		'size' => array
@@ -188,6 +202,24 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 			(
 				array('tl_bxslider_slide', 'pagePicker')
 			),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'imageTitle' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['imageTitle'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'caption' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['caption'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'allowHtml'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'style' => array
