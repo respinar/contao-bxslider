@@ -20,7 +20,6 @@ namespace Respinar\BxSlider\Frontend;
  */
 class BxSlider extends \Frontend
 {
-
 	/**
 	 * Name of the table
 	 *
@@ -48,8 +47,7 @@ class BxSlider extends \Frontend
 
 
 	public function parseSlide($objSlide, $strClass='', $intCount=0)
-	{		
-
+	{
 		$objTemplate = new \FrontendTemplate($this->bx_slide_template);
 
 		$objTemplate->setData($objSlide->row());
@@ -61,15 +59,8 @@ class BxSlider extends \Frontend
 		{
 			$objModel = \FilesModel::findByUuid($objSlide->singleSRC);
 
-			if ($objModel === null)
-			{
-				if (!\Validator::isUuid($objSlide->singleSRC))
-				{
-					$objTemplate->text = '<p class="error">'.$GLOBALS['TL_LANG']['ERR']['version2format'].'</p>';
-				}
-			}
-			elseif (is_file(TL_ROOT . '/' . $objModel->path))
-			{
+			if ($objModel !== null && is_file(\System::getContainer()->getParameter('kernel.project_dir') . '/' . $objModel->path))
+			{				
 				// Do not override the field now that we have a model registry (see #6303)
 				$arrSlide = $objSlide->row();
 
@@ -91,7 +82,7 @@ class BxSlider extends \Frontend
 				}
 
 				$arrSlide['singleSRC'] = $objModel->path;
-				$this->addImageToTemplate($objTemplate, $arrSlide);
+				$this->addImageToTemplate($objTemplate, $arrSlide, null, null, $objModel);
 			}
 		}
 
@@ -99,8 +90,5 @@ class BxSlider extends \Frontend
 		$objTemplate->hrefclass = $objSlide->class;
 
 		return $objTemplate->parse();
-
 	}
-
-
 }
