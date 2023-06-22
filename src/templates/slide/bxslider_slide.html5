@@ -1,5 +1,0 @@
-<li>
-
-  <?php $this->insert('image', $this->arrData); ?>
-
-</li>
