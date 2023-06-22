@@ -9,10 +9,17 @@
  * @link       https://respinar.com/
  */
 
+use Contao\Backend;
+
 /**
  * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '{title_legend},type,headline;{bx_slider_legend},bx_slider;{template_legend},bx_slide_template,customTpl,size;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '
+	{title_legend},type,headline;
+	{bx_slider_legend},bx_slider;
+	{template_legend},bx_slide_template,customTpl,size;
+	{protected_legend:hide},protected;
+	{expert_legend:hide},guests,cssID,space';
 
 
 /**
@@ -20,7 +27,6 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '{title_legend},typ
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['bx_slider'] = array
 (
-	'label'                => &$GLOBALS['TL_LANG']['tl_content']['bx_slider'],
 	'exclude'              => true,
 	'inputType'            => 'radio',
 	'foreignKey'           => 'tl_bxslider.title',
@@ -30,7 +36,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bx_slider'] = array
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['bx_slide_template'] = array
 (
-	'label'                => &$GLOBALS['TL_LANG']['tl_content']['bx_slide_template'],
 	'exclude'              => true,
 	'inputType'            => 'select',
 	'options_callback'     => array('tl_content_bxslider', 'getSlideTemplates'),

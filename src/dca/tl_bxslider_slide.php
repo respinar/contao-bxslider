@@ -9,6 +9,14 @@
  * @link       https://respinar.com/
  */
 
+use Contao\System;
+use Contao\Backend;
+use Contao\Database;
+use Contao\DataContainer;
+use Contao\Image;
+use Contao\Input;
+use Contao\Versions;
+use Contao\FilesModel;
 
 /**
  * Load tl_content language file
@@ -62,33 +70,28 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['edit'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
 				'button_callback'     => array('tl_bxslider_slide', 'toggleIcon')
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -141,7 +144,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['title'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
@@ -149,7 +151,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'text' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['text'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'textarea',
@@ -158,7 +159,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'singleSRC' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['singleSRC'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('mandatory'=>true,'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
@@ -166,7 +166,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'overwriteMeta' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['overwriteMeta'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 clr'),
@@ -174,26 +173,22 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'alt' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['alt'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),	
+		),
 		'size' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['size'],
 			'exclude'                 => true,
 			'inputType'               => 'imageSize',
-			'options'                 => System::getImageSizes(),
 			'reference'               => &$GLOBALS['TL_LANG']['MSC'],
 			'eval'                    => array('rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 		'imageUrl' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['imageUrl'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -206,7 +201,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'imageTitle' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['imageTitle'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -215,7 +209,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'caption' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['caption'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -224,35 +217,31 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'style' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['style'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),		
+		),
 		'data_merge' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['data_merge'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),	
+		),
 		'published' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['published'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'flag'                    => 1,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('doNotCopy'=>true, 'submitOnChange'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
-		),		
+		),
 		'start' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['start'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
@@ -260,7 +249,6 @@ $GLOBALS['TL_DCA']['tl_bxslider_slide'] = array
 		),
 		'stop' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_bxslider_slide']['stop'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
@@ -283,11 +271,11 @@ class tl_bxslider_slide extends Backend
 	 */
 	public function generateElementRow($arrRow)
 	{
-		$objImage = \FilesModel::findByPk($arrRow['singleSRC']);
+		$objImage = FilesModel::findByPk($arrRow['singleSRC']);
 
 		if ($objImage !== null)
 		{
-			$strImage = \Image::getHtml(\Image::get($objImage->path, '100', '50', 'center_center'));
+			$strImage = Image::getHtml(Image::get($objImage->path, '100', '50', 'center_center'));
 		}
 
 		return '<div><div style="float:left; margin-right:10px;">'.$strImage.'</div>'.$arrRow['title'] . '</div>';
@@ -324,7 +312,7 @@ class tl_bxslider_slide extends Backend
 		{
 			$this->toggleVisibility(Input::get('tid'), (Input::get('state') == 1), (@func_get_arg(12) ?: null));
 			$this->redirect($this->getReferer());
-		}		
+		}
 
 		$href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
 
@@ -380,7 +368,7 @@ class tl_bxslider_slide extends Backend
 					   ->execute($intId);
 
 		$objVersions->create();
-		
+
 	}
 
 }
