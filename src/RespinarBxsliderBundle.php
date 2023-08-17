@@ -17,7 +17,7 @@ namespace Respinar\BxsliderBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RespinarContaoBxsliderBundle extends Bundle
+class RespinarBxsliderBundle extends Bundle
 {
     public function getPath(): string
     {
