@@ -9,12 +9,13 @@
  * @link       https://respinar.com/
  */
 
-$GLOBALS['BE_MOD']['content']['bxslider'] = array (
-		'tables' => array('tl_bxslider', 'tl_bxslider_slide')
+use Respinar\BxsliderBundle\Model\BxsliderModel;
+
+$GLOBALS['BE_MOD']['system']['bxslider'] = array (
+		'tables' => array('tl_bxslider')
 );
 
 /**
  * Register models
  */
- $GLOBALS['TL_MODELS']['tl_bxslider']       = 'Respinar\BxsliderBundle\Model\BxsliderModel';
- $GLOBALS['TL_MODELS']['tl_bxslider_slide'] = 'Respinar\BxsliderBundle\Model\BxsliderSlideModel';
+$GLOBALS['TL_MODELS']['tl_bxslider'] = BxsliderModel::class; 
