@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['bxslider']   = '
 $GLOBALS['TL_DCA']['tl_module']['fields']['bx_slider'] = array
 (
 	'exclude'              => true,
-	'inputType'            => 'radio',
+	'inputType'            => 'select',
 	'foreignKey'           => 'tl_bxslider.title',
 	'eval'                 => array('multiple'=>false, 'mandatory'=>true),
 	'sql'				   => "int(10) unsigned NOT NULL default '0'",
