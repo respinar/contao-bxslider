@@ -20,7 +20,6 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_bxslider_slide'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -59,29 +58,24 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 		(
 			'edit' => array
 			(
-				'href'                => 'table=tl_bxslider_slide',
-				'icon'                => 'edit.gif'
-			),
-			'editheader' => array
-			(
 				'href'                => 'act=edit',
-				'icon'                => 'header.gif'
+				'icon'                => 'edit.svg'
 			),
 			'copy' => array
 			(
 				'href'                => 'act=copy',
-				'icon'                => 'copy.gif'
+				'icon'                => 'copy.svg'
 			),
 			'delete' => array
 			(
 				'href'                => 'act=delete',
-				'icon'                => 'delete.gif',
+				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
 				'href'                => 'act=show',
-				'icon'                => 'show.gif'
+				'icon'                => 'show.svg'
 			)
 		)
 	),
@@ -101,14 +95,13 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('protected','bx_pager','bx_ticker','bx_adaptiveHeight','bx_touchEnabled','bx_controls','bx_autoControls','bx_auto'),
+		'__selector__'                => array('bx_pager','bx_ticker','bx_adaptiveHeight','bx_touchEnabled','bx_controls','bx_autoControls','bx_auto'),
 		'default'                     => '{title_legend},title;{bx_options_legend},bx_mode,bx_speed,bx_slideMargin,bx_startSlide,bx_infiniteLoop,bx_responsive,bx_captions,bx_randomStart,bx_video,bx_hideControlOnEnd,bx_useCSS,bx_oneToOneTouch,bx_easing,bx_preloadImages,bx_ticker,bx_adaptiveHeight,bx_touchEnabled,bx_preventDefaultSwipeX,bx_preventDefaultSwipeY;{bx_pager_legend},bx_pager;{bx_controls_legend},bx_controls,bx_autoControls;{bx_auto_legend},bx_auto;{bx_carousel_legend:hide},bx_minSlides,bx_maxSlides,bx_moveSlides,bx_slideWidth;{protected_legend:hide},protected;'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'protected'                   => 'groups',
         'bx_pager'                    => 'bx_pagerType,bx_pagerShortSeparator',
         'bx_ticker'                   => 'bx_tickerHover',
         'bx_adaptiveHeight'           => 'bx_adaptiveHeightSpeed',
@@ -133,7 +126,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
+			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'bx_mode' =>  array
