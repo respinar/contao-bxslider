@@ -14,17 +14,19 @@ declare(strict_types=1);
 
 namespace Respinar\BxsliderBundle\ContaoManager;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Respinar\BxsliderBundle\RespinarBxsliderBundle;
 
 class Plugin implements BundlePluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create('Respinar\BxsliderBundle\RespinarContaoBxsliderBundle')
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle']),
+            BundleConfig::create(RespinarBxsliderBundle::class)
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 }
