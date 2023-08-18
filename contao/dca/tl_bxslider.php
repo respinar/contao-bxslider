@@ -96,19 +96,19 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('pager','ticker','adaptiveHeight','touchEnabled','controls','autoControls','auto'),
-		'default'                     => '{title_legend},title;{bx_options_legend},bx_mode,bx_speed,bx_slideMargin,bx_startSlide,bx_infiniteLoop,bx_responsive,bx_captions,bx_randomStart,bx_video,bx_hideControlOnEnd,bx_useCSS,bx_oneToOneTouch,bx_easing,bx_preloadImages,bx_ticker,bx_adaptiveHeight,bx_touchEnabled,bx_preventDefaultSwipeX,bx_preventDefaultSwipeY;{bx_pager_legend},bx_pager;{bx_controls_legend},bx_controls,bx_autoControls;{bx_auto_legend},bx_auto;{bx_carousel_legend:hide},bx_minSlides,bx_maxSlides,bx_moveSlides,bx_slideWidth;{protected_legend:hide},protected;'
+		'default'                     => '{title_legend},title;{options_legend},mode,speed,slideMargin,startSlide,infiniteLoop,responsive,captions,randomStart,video,hideControlOnEnd,useCSS,oneToOneTouch,easing,preloadImages,ticker,adaptiveHeight,touchEnabled,preventDefaultSwipeX,preventDefaultSwipeY;{pager_legend},pager;{controls_legend},controls,autoControls;{auto_legend},auto;{carousel_legend:hide},minSlides,maxSlides,moveSlides,slideWidth;{protected_legend:hide},protected;'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-        'pager'                    => 'pagerType,bx_pagerShortSeparator',
+        'pager'                    => 'pagerType,pagerShortSeparator',
         'ticker'                   => 'tickerHover',
         'adaptiveHeight'           => 'adaptiveHeightSpeed',
         'touchEnabled'             => 'swipeThreshold',
-        'controls'                 => 'nextText,bx_prevText',
-        'autoControls'             => 'startText,bx_stopText,bx_autoControlsCombine,',
-        'auto'                     => 'autoDirection,bx_autoStart,bx_autoHover,bx_pause,bx_autoDelay',
+        'controls'                 => 'nextText,prevText',
+        'autoControls'             => 'startText,stopText,autoControlsCombine,',
+        'auto'                     => 'autoDirection,autoStart,autoHover,pause,autoDelay',
 	),
 
 	// Fields
