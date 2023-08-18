@@ -11,6 +11,7 @@
 
 
 <script>
+$(document).ready(function(){
   $('.bxslider').bxSlider({
     <?php if ($this->bx_mode != 'horizontal'): ?> mode: '<?= $this->bx_mode ?>', <?php endif; ?>
     <?php if ($this->bx_speed != 500): ?> speed: <?= $this->bx_speed ?>, <?php endif; ?>
@@ -69,6 +70,7 @@
     <?php if ($this->bx_slideWidth !=0): ?> slideWidth: <?= $this->bx_slideWidth ?>, <?php endif; ?>
 
   });
+});
 </script>
 
 <?php endif; ?>

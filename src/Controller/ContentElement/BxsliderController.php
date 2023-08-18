@@ -13,14 +13,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Respinar\BxsliderBundle\Controller\BxsliderParser;
 use Respinar\BxsliderBundle\Model\BxsliderModel;
-use Respinar\BxsliderBundle\Model\BxsliderSlideModel;
 
 #[AsContentElement(category: 'slider')]
 class BxsliderController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        $intTotal = BxsliderSlideModel::countPublishedByPid($model->bx_slider);
+        //$intTotal = BxsliderSlideModel::countPublishedByPid($model->bx_slider);
 
 		if ($intTotal < 1)
 		{
@@ -33,7 +32,7 @@ class BxsliderController extends AbstractContentElementController
 
 		$template->setData($objbxSlider->row());
 
-		$objSlides = BxsliderSlideModel::findPublishedByPid($model->bx_slider);
+		//$objSlides = BxsliderSlideModel::findPublishedByPid($model->bx_slider);
 
 
 
