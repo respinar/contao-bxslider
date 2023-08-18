@@ -95,20 +95,20 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('bx_pager','bx_ticker','bx_adaptiveHeight','bx_touchEnabled','bx_controls','bx_autoControls','bx_auto'),
+		'__selector__'                => array('pager','ticker','adaptiveHeight','touchEnabled','controls','autoControls','auto'),
 		'default'                     => '{title_legend},title;{bx_options_legend},bx_mode,bx_speed,bx_slideMargin,bx_startSlide,bx_infiniteLoop,bx_responsive,bx_captions,bx_randomStart,bx_video,bx_hideControlOnEnd,bx_useCSS,bx_oneToOneTouch,bx_easing,bx_preloadImages,bx_ticker,bx_adaptiveHeight,bx_touchEnabled,bx_preventDefaultSwipeX,bx_preventDefaultSwipeY;{bx_pager_legend},bx_pager;{bx_controls_legend},bx_controls,bx_autoControls;{bx_auto_legend},bx_auto;{bx_carousel_legend:hide},bx_minSlides,bx_maxSlides,bx_moveSlides,bx_slideWidth;{protected_legend:hide},protected;'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-        'bx_pager'                    => 'bx_pagerType,bx_pagerShortSeparator',
-        'bx_ticker'                   => 'bx_tickerHover',
-        'bx_adaptiveHeight'           => 'bx_adaptiveHeightSpeed',
-        'bx_touchEnabled'             => 'bx_swipeThreshold',
-        'bx_controls'                 => 'bx_nextText,bx_prevText',
-        'bx_autoControls'             => 'bx_startText,bx_stopText,bx_autoControlsCombine,',
-        'bx_auto'                     => 'bx_autoDirection,bx_autoStart,bx_autoHover,bx_pause,bx_autoDelay',
+        'pager'                    => 'pagerType,bx_pagerShortSeparator',
+        'ticker'                   => 'tickerHover',
+        'adaptiveHeight'           => 'adaptiveHeightSpeed',
+        'touchEnabled'             => 'swipeThreshold',
+        'controls'                 => 'nextText,bx_prevText',
+        'autoControls'             => 'startText,bx_stopText,bx_autoControlsCombine,',
+        'auto'                     => 'autoDirection,bx_autoStart,bx_autoHover,bx_pause,bx_autoDelay',
 	),
 
 	// Fields
@@ -129,7 +129,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-		'bx_mode' =>  array
+		'mode' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -139,7 +139,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_speed' =>  array
+		'speed' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 500,
@@ -148,7 +148,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_slideMargin' =>  array
+		'slideMargin' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 0,
@@ -157,7 +157,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_startSlide' =>  array
+		'startSlide' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 0,
@@ -166,7 +166,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_randomStart' =>  array
+		'randomStart' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => false,
@@ -175,7 +175,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_infiniteLoop' =>  array
+		'infiniteLoop' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -184,7 +184,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_hideControlOnEnd' =>  array
+		'hideControlOnEnd' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -192,7 +192,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_easing' =>  array
+		'easing' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -201,7 +201,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_captions' =>  array
+		'captions' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -209,7 +209,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_ticker' =>  array
+		'ticker' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -217,21 +217,21 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_tickerHover' =>  array
+		'tickerHover' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
-		'bx_adaptiveHeight' =>  array
+		'adaptiveHeight' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr m12', 'submitOnChange'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
-		'bx_adaptiveHeightSpeed' =>  array
+		'adaptiveHeightSpeed' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'text',
@@ -240,7 +240,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_video' =>  array
+		'video' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -248,7 +248,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_responsive' =>  array
+		'responsive' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -257,7 +257,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_useCSS' =>  array
+		'useCSS' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -266,7 +266,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_preloadImages' =>  array
+		'preloadImages' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -276,7 +276,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_touchEnabled' =>  array
+		'touchEnabled' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -285,7 +285,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_swipeThreshold' =>  array
+		'swipeThreshold' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 50,
@@ -294,7 +294,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_oneToOneTouch' =>  array
+		'oneToOneTouch' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -303,7 +303,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_preventDefaultSwipeX' =>  array
+		'preventDefaultSwipeX' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -312,7 +312,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_preventDefaultSwipeY' =>  array
+		'preventDefaultSwipeY' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -323,7 +323,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 
 		/* Pager */
 
-		'bx_pager' =>  array
+		'pager' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -332,7 +332,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_pagerType' =>  array
+		'pagerType' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -342,7 +342,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_pagerShortSeparator' =>  array
+		'pagerShortSeparator' =>  array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -354,7 +354,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 
 		/* Controls */
 
-		'bx_controls' =>  array
+		'controls' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -363,7 +363,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_nextText' =>  array
+		'nextText' =>  array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -373,7 +373,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_prevText' =>  array
+		'prevText' =>  array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -383,7 +383,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_autoControls' =>  array
+		'autoControls' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -391,7 +391,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_startText' =>  array
+		'startText' =>  array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -401,7 +401,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_stopText' =>  array
+		'stopText' =>  array
 		(
 			'exclude'                 => true,
 			'search'                  => true,
@@ -411,7 +411,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_autoControlsCombine' =>  array
+		'autoControlsCombine' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -421,7 +421,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 
 		/* Auto */
 
-		'bx_auto' =>  array
+		'auto' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -429,7 +429,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_pause' =>  array
+		'pause' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 4000,
@@ -438,7 +438,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_autoStart' =>  array
+		'autoStart' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -447,7 +447,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_autoDirection' =>  array
+		'autoDirection' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -457,7 +457,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 
-		'bx_autoStart' =>  array
+		'autoStart' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => true,
@@ -466,7 +466,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_autoHover' =>  array
+		'autoHover' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
@@ -474,7 +474,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "char(1) NOT NULL default ''"
 		),
 
-		'bx_autoDelay' =>  array
+		'autoDelay' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'text',
@@ -484,7 +484,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 
 		/* Carousel */
 
-		'bx_minSlides' =>  array
+		'minSlides' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 1,
@@ -493,7 +493,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_maxSlides' =>  array
+		'maxSlides' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 1,
@@ -502,7 +502,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
 
-		'bx_moveSlides' =>  array
+		'moveSlides' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 0,
@@ -510,7 +510,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
 		),
-		'bx_slideWidth' =>  array
+		'slideWidth' =>  array
 		(
 			'exclude'                 => true,
 			'default'                 => 0,
