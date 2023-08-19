@@ -76,7 +76,7 @@ $GLOBALS['TL_LANG']['tl_bxslider']['protected_legend'] = 'Access protection';
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_bxslider']['new']        = array('New bxSlider','Add a new bxSlider');
+$GLOBALS['TL_LANG']['tl_bxslider']['new']        = array('New bxSlider config','Add a new bxSlider config');
 $GLOBALS['TL_LANG']['tl_bxslider']['edit']       = array('Edit bxSlider','Edit bxSlider ID %s');
 $GLOBALS['TL_LANG']['tl_bxslider']['editheader'] = array('Edit bxSlider settings','Edit bxSlider settings ID %s');
 $GLOBALS['TL_LANG']['tl_bxslider']['copy']       = array('Copy bxSlider','Copy bxSlider ID %s');
