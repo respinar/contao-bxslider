@@ -7,7 +7,17 @@
   <?php else: ?>
     <ul class="bxslider">
       <?php echo implode('', $this->slides); ?>
-    </ul>
+    </ul>    
+
+    <?php if ($this->thumbnails): ?>
+      <?php $counter = 0 ?>
+      <div id="bx-pager">
+        <?php foreach($this->thumbnails as $thumbnail): ?>        
+        <a data-slide-index="<?= $counter ?>" href=""><?= $thumbnail ?></a>
+        <?php $counter += 1 ?>
+        <?php endforeach; ?>
+    </div>  
+    <?php endif; ?>
 
 
 <script>
@@ -66,7 +76,8 @@ $(document).ready(function(){
       moveSlides: <?= $this->moveSlides ?>,
     <?php endif; ?>
     <?php if ($this->slideWidth !=0): ?> slideWidth: <?= $this->slideWidth ?>, <?php endif; ?>
-
+    
+    <?php if ($this->thumbnails): ?> pagerCustom: '#bx-pager', <?php endif; ?>
   });
 });
 </script>
