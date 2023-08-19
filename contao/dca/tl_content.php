@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '
 	{title_legend},type,headline;	
 	{images_legend},bxSlider_items;
 	{bx_slider_legend},bxSlider,bxSlider_thumbnail;
-	{template_legend},bxSlider_template,customTpl,bxSlider_thumbnailSize;
+	{template_legend},bxSlider_template,customTpl,size,bxSlider_thumbnailSize;
 	{protected_legend:hide},protected;
 	{expert_legend:hide},guests,cssID,space';
 
