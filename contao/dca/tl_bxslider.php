@@ -9,6 +9,9 @@
  * @link       https://respinar.com/
  */
 
+use Contao\System;
+use Contao\BackendUser;
+
 
 /**
  * Table tl_bxslider
@@ -517,6 +520,25 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
 			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+		),
+
+		'thumbnail' => array
+		(
+			'exclude'          => true,
+			'inputType'        => 'checkbox',
+			'eval'             => array('tl_class'=>'w50 m12'),
+			'sql'              => "char(1) COLLATE ascii_bin NOT NULL default ''"
+		),
+		'thumbnailSize' => array
+		(
+			'exclude'                 => true,
+			'inputType'               => 'imageSize',
+			'reference'               => &$GLOBALS['TL_LANG']['MSC'],
+			'options_callback' => function () {
+				return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
+			},
+			'eval'                    => array('rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50 clr'),
+			'sql'                     => "varchar(128) COLLATE ascii_bin NOT NULL default ''"
 		),
 		'protected' => array
 		(
