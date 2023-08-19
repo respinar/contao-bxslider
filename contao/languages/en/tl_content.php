@@ -13,8 +13,8 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['bx_slider']              = array('Slider','Select a slider.');
-$GLOBALS['TL_LANG']['tl_content']['bx_slide_template']      = array('Slide template','Select slide template.');
+$GLOBALS['TL_LANG']['tl_content']['bxSlider']           = array('bxSlider Config','Select a configration.');
+$GLOBALS['TL_LANG']['tl_content']['bxSlider_template']  = array('Slide template','Select slide template.');
 
 /**
  * Legends
