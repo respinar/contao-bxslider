@@ -23,76 +23,63 @@ use Contao\StringUtil;
 /**
  * Class Bxslider
  */
-class BxsliderParser //extends \Frontend
+class BxsliderParser
 {
 	/**
 	 * Name of the table
 	 *
 	 */
 
-	public function parseSlides($objSlides, $model)
+	static public function parseSlides($model)
 	{
-		$limit = $objSlides->count();
 
-		if ($limit < 1)
-		{
-			return array();
-		}
+		$slideItems = StringUtil::deserialize($model->bxSlider_items);
 
-		$count = 0;
 		$arrSlides = array();
 
-		while ($objSlides->next())
+		foreach($slideItems as $slideItem)
 		{
-			$arrSlides[] = $this->parseSlide($objSlides, $model, ((++$count == 1) ? ' first' : '') . (($count == $limit) ? ' last' : '') . ((($count % 2) == 0) ? ' odd' : ' even'), $count);
+			$arrSlides[] = BxsliderParser::parseSlide($slideItem, $model);
 		}
 
 		return $arrSlides;
 	}
 
 
-	public function parseSlide($objSlide, $model, $strClass='', $intCount=0)
+	static public function parseSlide($slideItem, $model)
 	{
-		$objTemplate = new FrontendTemplate($model->bx_slide_template);
+		$objTemplate = new FrontendTemplate($model->bxSlider_template);
 
-		$objTemplate->setData($objSlide->row());
+		//$objTemplate->setData($slideItem->row());
 
 		$objTemplate->addImage = false;
 
 		// Add an image
-		if ($objSlide->singleSRC != '')
+		if ($slideItem != '')
 		{
-			$objModel = FilesModel::findByUuid($objSlide->singleSRC);
-
-			if ($objModel !== null && is_file(System::getContainer()->getParameter('kernel.project_dir') . '/' . $objModel->path))
+			$imgSize = null;
+			
+			if ($model->imgSize)
 			{
-				// Do not override the field now that we have a model registry (see #6303)
-				$arrSlide = $objSlide->row();
+				$size = StringUtil::deserialize($model->imgSize);
 
-				// Override the default image size
-				if ($objSlide->size != '' || $model->imgSize != '')
+				if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]) || ($size[2][0] ?? null) === '_')
 				{
-					if ( $model->imgSize != '')
-					{
-						$objSlide->size = $model->imgSize;
-					}
-
-					$size = StringUtil::deserialize($objSlide->size);
-
-
-					if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]))
-					{
-						$arrSlide['size'] = $objSlide->size;
-					}
+					$imgSize = $model->imgSize;
 				}
+			}
 
-				$arrSlide['singleSRC'] = $objModel->path;
-				$this->addImageToTemplate($objTemplate, $arrSlide, null, null, $objModel);
+			$figureBuilder = System::getContainer()
+				->get('contao.image.studio')
+				->createFigureBuilder()
+				->from($slideItem)
+				->setSize($imgSize);
+
+			if (null !== ($figure = $figureBuilder->buildIfResourceExists()))
+			{
+				$figure->applyLegacyTemplateData($objTemplate);
 			}
 		}
-
-		$objTemplate->class     = $strClass;
-		$objTemplate->hrefclass = $objSlide->class;
 
 		return $objTemplate->parse();
 	}
