@@ -12,19 +12,19 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['bxslider'] = array('bxSlider', 'Manage Slider and slides');
+$GLOBALS['TL_LANG']['MOD']['bxslider'] = array('bxSlider config', 'Manage bxSlider configrations');
 
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['bxslider'] = array('bxSlider', 'Adds a slider to the website.');
+$GLOBALS['TL_LANG']['FMD']['bxslider'] = array('bxSlider', 'Adds a bxSlider to the website.');
 
 
 /**
  * Front end content elements
  */
-$GLOBALS['TL_LANG']['CTE']['bxslider'] = array('bxSlider', 'Adds a slider to the website.');
+$GLOBALS['TL_LANG']['CTE']['bxslider'] = array('bxSlider', 'Adds a bxSlider to the website.');
 
 
 
