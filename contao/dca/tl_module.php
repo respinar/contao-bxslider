@@ -10,14 +10,17 @@
  */
 
 use Contao\Backend;
+use Contao\Controller;
+use Contao\System;
+use Contao\BackendUser;
 
 /**
  * Add palettes to tl_module
  */
 $GLOBALS['TL_DCA']['tl_module']['palettes']['bxslider']   = '
 	{title_legend},name,headline,type;
-	{bx_slider_legend},bx_slider;
-	{template_legend},bx_slide_template,customTpl,imgSize;
+	{bx_slider_legend},bx_slider,bxSlider_thumbnail;
+	{template_legend},bx_slide_template,customTpl,imgSize,bxSlider_thumbnailSize;
 	{protected_legend:hide},protected;
 	{expert_legend:hide},guests,cssID,space';
 
@@ -37,9 +40,32 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bx_slide_template'] = array
 (
 	'exclude'              => true,
 	'inputType'            => 'select',
-	'options_callback'     => array('tl_module_bxslider', 'getSlideTemplates'),
+	'options_callback'     => static function ()
+	{
+		return Controller::getTemplateGroup('bxslider_');
+	},
 	'eval'				   => array('tl_class'=>'w50 clr'),
 	'sql'				   => "varchar(64) NOT NULL default ''",
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['bxSlider_thumbnail'] = array
+(
+	'exclude'          => true,
+	'inputType'        => 'checkbox',
+	'eval'             => array('tl_class'=>'w50 m12'),
+	'sql'              => "char(1) COLLATE ascii_bin NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['bxSlider_thumbnailSize'] = array
+(
+	'exclude'                 => true,
+	'inputType'               => 'imageSize',
+	'reference'               => &$GLOBALS['TL_LANG']['MSC'],
+	'options_callback' => function () {
+		return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
+	},
+	'eval'                    => array('rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'),
+	'sql'                     => "varchar(128) COLLATE ascii_bin NOT NULL default ''"
 );
 
 /**
