@@ -5,13 +5,13 @@
 <?php if (empty($this->slides)): ?>
     <p class="noslide"><?= $this->empty; ?></p>
   <?php else: ?>
-    <ul class="bxslider">
+    <ul id="<?= $this->sliderId ?>" class="bx-slider">
       <?php echo implode('', $this->slides); ?>
-    </ul>    
+    </ul>
 
     <?php if ($this->thumbnails): ?>
       <?php $counter = 0 ?>
-      <div id="bx-pager">
+      <div id="<?= $this->thumbnailId ?>" class="bx-pager">
         <?php foreach($this->thumbnails as $thumbnail): ?>        
         <a data-slide-index="<?= $counter ?>" href=""><?= $thumbnail ?></a>
         <?php $counter += 1 ?>
@@ -20,9 +20,9 @@
     <?php endif; ?>
 
 
-<script>
-$(document).ready(function(){
-  $('.bxslider').bxSlider({
+<script>  
+$(function(){
+  $('#<?= $this->sliderId ?>').bxSlider({
     <?php if ($this->mode != 'horizontal'): ?> mode: '<?= $this->mode ?>', <?php endif; ?>
     <?php if ($this->speed != 500): ?> speed: <?= $this->speed ?>, <?php endif; ?>
     <?php if ($this->slideMargin): ?> slideMargin: <?= $this->slideMargin ?>, <?php endif; ?>
@@ -77,7 +77,7 @@ $(document).ready(function(){
     <?php endif; ?>
     <?php if ($this->slideWidth !=0): ?> slideWidth: <?= $this->slideWidth ?>, <?php endif; ?>
     
-    <?php if ($this->thumbnails): ?> pagerCustom: '#bx-pager', <?php endif; ?>
+    <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>', <?php endif; ?>
   });
 });
 </script>
