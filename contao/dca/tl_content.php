@@ -1,12 +1,11 @@
 <?php
 
-/**
- * bxslider Extension for Contao Open Source CMS
+/*
+ * This file is part of Contao bxSlider Bundle.
  *
- * @copyright  Copyright (c) 2017, Respinar
- * @author     Respinar <info@respinar.com>
- * @license    https://opensource.org/licenses/lgpl-3.0.html LGPL
- * @link       https://respinar.com/
+ * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ *
+ * @license MIT
  */
 
 use Contao\System;
@@ -17,7 +16,7 @@ use Contao\BackendUser;
  * Add palettes to tl_content
  */
 $GLOBALS['TL_DCA']['tl_content']['palettes']['bxslider']   = '
-	{title_legend},type,headline;	
+	{title_legend},type,headline;
 	{images_legend},bxSlider_items;
 	{bx_slider_legend},bxSlider,bxSlider_thumbnail;
 	{template_legend},bxSlider_template,customTpl,size,bxSlider_thumbnailSize;
@@ -56,7 +55,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bxSlider_items'] = array
 	'exclude'          => true,
 	'inputType'        => 'fileTree',
 	'eval'             => array('multiple'=>true, 'isGallery'=>true, 'extensions'=> '%contao.image.valid_extensions%', 'fieldType'=>'checkbox', 'orderField'=>'orderSRC', 'files'=>true),
-	'sql'              => "blob NULL",	
+	'sql'              => "blob NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['bxSlider_thumbnail'] = array

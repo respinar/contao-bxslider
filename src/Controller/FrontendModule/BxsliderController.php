@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of Contao bxSlider Bundle.
+ *
+ * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ *
+ * @license MIT
+ */
+
 namespace Respinar\BxsliderBundle\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -13,7 +21,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Respinar\BxsliderBundle\Controller\BxsliderParser;
 use Respinar\BxsliderBundle\Model\BxsliderModel;
-use Respinar\BxsliderBundle\Model\BxsliderSlideModel;
 
 #[AsFrontendModule(category: 'slider')]
 class BxsliderController extends AbstractFrontendModuleController

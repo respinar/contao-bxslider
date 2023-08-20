@@ -1,12 +1,11 @@
 <?php
 
-/**
- * bxslider Extension for Contao Open Source CMS
+/*
+ * This file is part of Contao bxSlider Bundle.
  *
- * @copyright  Copyright (c) 2017, Respinar
- * @author     Respinar <info@respinar.com>
- * @license    https://opensource.org/licenses/lgpl-3.0.html LGPL
- * @link       https://respinar.com/
+ * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ *
+ * @license MIT
  */
 
 use Respinar\BxsliderBundle\Model\BxsliderModel;
@@ -18,4 +17,4 @@ $GLOBALS['BE_MOD']['system']['bxslider'] = array (
 /**
  * Register models
  */
-$GLOBALS['TL_MODELS']['tl_bxslider'] = BxsliderModel::class; 
+$GLOBALS['TL_MODELS']['tl_bxslider'] = BxsliderModel::class;

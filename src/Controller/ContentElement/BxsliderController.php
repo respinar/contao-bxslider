@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of Contao bxSlider Bundle.
+ *
+ * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ *
+ * @license MIT
+ */
+
 namespace Respinar\BxsliderBundle\Controller\ContentElement;
 
 use Contao\ContentModel;

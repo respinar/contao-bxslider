@@ -1,12 +1,11 @@
 <?php
 
-/**
- * bxSlider Extension for Contao Open Source CMS
+/*
+ * This file is part of Contao bxSlider Bundle.
  *
- * @copyright  Copyright (c) 2017, Respinar
- * @author     Respinar <info@respinar.com>
- * @license    https://opensource.org/licenses/lgpl-3.0.html LGPL
- * @link       https://respinar.com/
+ * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ *
+ * @license MIT
  */
 
 
@@ -17,7 +16,6 @@ namespace Respinar\BxsliderBundle\Controller;
 
 use Contao\FrontendTemplate;
 use Contao\System;
-use Contao\FilesModel;
 use Contao\StringUtil;
 
 /**
@@ -92,7 +90,7 @@ class BxsliderParser
 			'slideWidth' => 0,
 			'shrinkItems' => '', //false,
 
-			'keyboardEnabled' => '', //false,					
+			'keyboardEnabled' => '', //false,
 
 			'ariaLive' => 1, //true
 			'ariaHidden' => 1, //true
@@ -137,7 +135,7 @@ class BxsliderParser
 		if ($slideItem != '')
 		{
 			$imgSize = null;
-			
+
 			if ($model->imgSize)
 			{
 				$size = StringUtil::deserialize($model->imgSize);
