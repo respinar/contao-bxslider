@@ -1,0 +1,37 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php if (empty($this->slides)): ?>
+    <p class="noslide"><?= $this->empty; ?></p>
+  <?php else: ?>
+    <div id="<?= $this->sliderId ?>" class="bx-slider">
+      <?php echo implode('', $this->slides); ?>
+  </div>
+
+    <?php if ($this->thumbnails): ?>
+      <?php $counter = 0 ?>
+      <div id="<?= $this->thumbnailId ?>" class="bx-pager">
+        <?php foreach($this->thumbnails as $thumbnail): ?>
+        <a data-slide-index="<?= $counter ?>" href=""><?= $thumbnail ?></a>
+        <?php $counter += 1 ?>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
+
+<script>
+$(function(){$('#<?= $this->sliderId ?>').bxSlider({
+  <?php
+   foreach($this->options as $option => $value) {
+    echo $option . ':' . $value . ',';
+   }
+  ?>
+  <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>' <?php endif; ?>;
+  });
+  });
+</script>
+
+<?php endif; ?>
+
+<?php $this->endblock(); ?>

@@ -1,10 +1,10 @@
 {
     "name": "respinar/contao-bxslider",
-    "description": "bxSlider module for Contao",
+    "description": "bxSlider bundle for Contao",
     "keywords": ["contao", "bxSlider", "Carousel", "Slider"],
-    "type": "contao-module",
+    "type": "contao-bundle",
     "homepage": "https://respinar.com",
-    "license": "LGPL-3.0-or-later",
+    "license": "MIT",
     "authors": [
         {
             "name": "Hamid Abbaszadeh",
@@ -14,29 +14,29 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/respinar/contao-bxslider/issues"
+        "issues": "https://github.com/respinar/contao-bxslider/issues",
+        "source": "https://github.com/respinar/contao-bxslider"
     },
     "require": {
-        "php": ">=5.4",
-        "contao/core-bundle":"~3.5 || ~4.4",
-        "contao-community-alliance/composer-plugin":"^2.4.1 || ~3.0"
+        "php": "^7.4 || ^8.1",
+        "contao/core-bundle":"^4.13 || ^5.1"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.12"
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\BxSlider\\": "src/library/"
+            "Respinar\\BxsliderBundle\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": false,
+            "contao/manager-plugin": false,
+            "contao-community-alliance/composer-plugin": true
         }
     },
     "extra": {
-        "contao": {
-            "sources": {
-                "src": "system/modules/bxslider"
-            },
-            "transifex": {
-                "project": "contao-bxslider",
-                "prefix": "master-",
-                "languages_cto": "languages",
-                "languages_tx": ".tx"
-            }
-        }
+        "contao-manager-plugin": "Respinar\\BxsliderBundle\\ContaoManager\\Plugin"
     }
 }
