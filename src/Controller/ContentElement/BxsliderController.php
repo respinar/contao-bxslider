@@ -41,7 +41,7 @@ class BxsliderController extends AbstractContentElementController
 			$template->options = BxsliderParser::setOptions($objBxSlider);
 		} else {
 			$template->options = null;
-		}	
+		}
 
 		$template->sliderId = 'bxslider-' . strval($model->id);
 		$template->thumbnailId = 'bxpager-' . strval($model->id);
@@ -54,7 +54,7 @@ class BxsliderController extends AbstractContentElementController
 			$template->slides = BxsliderParser::parseSlides($model);
 
 			if ($model->bxSlider_thumbnail) {
-				$model->imgSize = $model->bxSlider_thumbnailSize; 
+				$model->imgSize = $model->bxSlider_thumbnailSize;
 
 				$template->thumbnails = BxsliderParser::parseSlides($model);
 			}
