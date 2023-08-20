@@ -57,6 +57,10 @@ $GLOBALS['TL_LANG']['tl_bxslider']['minSlides']           = array('Min slides','
 $GLOBALS['TL_LANG']['tl_bxslider']['maxSlides']           = array('Max slides','The maximum number of slides to be shown. Slides will be sized up if carousel becomes larger than the original size.');
 $GLOBALS['TL_LANG']['tl_bxslider']['moveSlides']          = array('Move slides','The number of slides to move on transition. This value must be >= minSlides, and <= maxSlides. If zero (default), the number of fully-visible slides will be used.');
 $GLOBALS['TL_LANG']['tl_bxslider']['slideWidth']          = array('Slide width','The width of each slide. This setting is required for all horizontal carousels!');
+$GLOBALS['TL_LANG']['tl_bxslider']['ariaLive']            = array('Aria Live attribute','Adds Aria Live attribute to slider.');
+$GLOBALS['TL_LANG']['tl_bxslider']['ariaHidden']          = array('Aria Hidden attribute','Adds Aria Hidden attribute to any nonvisible slides.');
+$GLOBALS['TL_LANG']['tl_bxslider']['wrapperClass']        = array('Wrapper class','Class to wrap the slider in. Change to prevent from using default bxSlider styles.');
+$GLOBALS['TL_LANG']['tl_bxslider']['keyboardEnabled']     = array('Keyboard','Allows for keyboard control of visible slider. Keypress ignored if slider not visible.');
 $GLOBALS['TL_LANG']['tl_bxslider']['protected']           = array('Protect bxSlider','Show bxSlider slides to certain member groups only.');
 $GLOBALS['TL_LANG']['tl_bxslider']['groups']              = array('Allowed member groups','These groups will be able to see the bxSlider slides in this bxSlider.');
 
@@ -70,6 +74,9 @@ $GLOBALS['TL_LANG']['tl_bxslider']['pager_legend']     = 'Pager options';
 $GLOBALS['TL_LANG']['tl_bxslider']['controls_legend']  = 'Controls options';
 $GLOBALS['TL_LANG']['tl_bxslider']['auto_legend']      = 'Autopaly options';
 $GLOBALS['TL_LANG']['tl_bxslider']['carousel_legend']  = 'Carousel options';
+$GLOBALS['TL_LANG']['tl_bxslider']['keyboard_legend']  = 'Keyboard';
+$GLOBALS['TL_LANG']['tl_bxslider']['aria_legend']      = 'Accessibility';
+$GLOBALS['TL_LANG']['tl_bxslider']['class_legend']     = 'Classes';
 $GLOBALS['TL_LANG']['tl_bxslider']['protected_legend'] = 'Access protection';
 
 
