@@ -29,16 +29,19 @@ class BxsliderController extends AbstractContentElementController
 			return $template->getResponse();
 		}
 
-		if ($model->bxSlider == null)
+		if ($model->bxSlider_items == null)
 		{
             $template->empty = $GLOBALS['TL_LANG']['MSC']['bxslider_noSlide'];
 
 			return $template->getResponse();
 		}
 
-		$objBxSlider = BxsliderModel::findBy('id',$model->bxSlider);
-
-		$template->options = BxsliderParser::setOptions($objBxSlider);
+		if ($model->bxSlider != 0) {
+			$objBxSlider = BxsliderModel::findBy('id',$model->bxSlider);
+			$template->options = BxsliderParser::setOptions($objBxSlider);
+		} else {
+			$template->options = null;
+		}	
 
 		$template->sliderId = 'bxslider-' . strval($model->id);
 		$template->thumbnailId = 'bxpager-' . strval($model->id);
@@ -56,7 +59,6 @@ class BxsliderController extends AbstractContentElementController
 				$template->thumbnails = BxsliderParser::parseSlides($model);
 			}
 		}
-
 
 		$GLOBALS['TL_BODY'][] = Template::generateScriptTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.js', false, null);
         $GLOBALS['TL_BODY'][] = Template::generateStyleTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.css', false, null);
