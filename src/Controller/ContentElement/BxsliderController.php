@@ -38,7 +38,7 @@ class BxsliderController extends AbstractContentElementController
 
 		$objBxSlider = BxsliderModel::findBy('id',$model->bxSlider);
 
-		$template->setData($objBxSlider->row());
+		$template->options = BxsliderParser::setOptions($objBxSlider);
 
 		$template->sliderId = 'bxslider-' . strval($model->id);
 		$template->thumbnailId = 'bxpager-' . strval($model->id);
