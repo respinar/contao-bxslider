@@ -9,7 +9,6 @@
  * @link       https://respinar.com/
  */
 
-use Contao\Backend;
 use Contao\Controller;
 use Contao\System;
 use Contao\BackendUser;
@@ -19,24 +18,33 @@ use Contao\BackendUser;
  */
 $GLOBALS['TL_DCA']['tl_module']['palettes']['bxslider']   = '
 	{title_legend},name,headline,type;
-	{bx_slider_legend},bx_slider,bxSlider_thumbnail;
-	{template_legend},bx_slide_template,customTpl,imgSize,bxSlider_thumbnailSize;
+	{bxSlider_items}, bxSlider_items;
+	{images_legend},bxSlider,bxSlider_thumbnail;
+	{template_legend},bxSlider_template,customTpl,imgSize,bxSlider_thumbnailSize;
 	{protected_legend:hide},protected;
 	{expert_legend:hide},guests,cssID,space';
 
 /**
  * Add fields to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['bx_slider'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['bxSlider'] = array
 (
 	'exclude'              => true,
 	'inputType'            => 'select',
 	'foreignKey'           => 'tl_bxslider.title',
-	'eval'                 => array('multiple'=>false, 'mandatory'=>true),
+	'eval'                 => array('multiple'=>false, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
 	'sql'				   => "int(10) unsigned NOT NULL default '0'",
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['bx_slide_template'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['bxSlider_items'] = array
+(
+	'exclude'          => true,
+	'inputType'        => 'fileTree',
+	'eval'             => array('multiple'=>true, 'isGallery'=>true, 'extensions'=> '%contao.image.valid_extensions%', 'fieldType'=>'checkbox', 'orderField'=>'orderSRC', 'files'=>true),
+	'sql'              => "blob NULL",
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['bxSlider_template'] = array
 (
 	'exclude'              => true,
 	'inputType'            => 'select',
