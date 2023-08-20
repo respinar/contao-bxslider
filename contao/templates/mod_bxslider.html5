@@ -27,7 +27,7 @@ $(function(){$('#<?= $this->sliderId ?>').bxSlider({
     echo $option . ':' . $value . ',';
    }
   ?>
-  <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>' <?php endif; ?>
+  <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>' <?php endif; ?>;
   });
   });
 </script>
