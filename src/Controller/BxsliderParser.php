@@ -30,6 +30,85 @@ class BxsliderParser
 	 *
 	 */
 
+	static public function setOptions($bxSlider)
+	{
+		$defaultOptions = array (
+			'mode' => 'horizontal',
+			'speed' => 500,
+			'slideMargin' =>  0,
+			'startSlide' => 0,
+			'randomStart' => '', //false,
+			'slideSelector' => '',
+			'infiniteLoop' => 1, //true
+			'hideControlOnEnd' => '', //false,
+			'easing' => null,
+			'captions' => '', //false,
+			'ticker' => '', //false,
+			'tickerHover' => '', //false,
+			'adaptiveHeight' => '', //false,
+			'adaptiveHeight' => false,
+			'adaptiveHeightSpeed' => 500,
+			'video' => '', //false,
+			'responsive' => 1, //true
+			'useCSS' => 1, //true
+			'preloadImages' => 'visible',
+			'touchEnabled' => 1, //true
+			'swipeThreshold' => 50,
+			'oneToOneTouch' => 1, //true
+			'preventDefaultSwipeX' => 1, //true
+			'preventDefaultSwipeY' => '', //false
+			'wrapperClass' => 'bx-wrapper',
+
+			'pager' => 1, //true
+			'pagerType' => 'full',
+			'pagerShortSeparator' => '/',
+			'pagerSelector' => '',
+			'pagerCustom' => null,
+			'buildPager' => null,
+
+			'controls' => 1, //true
+			'nextText' => 'Next',
+			'prevText' => 'Prev',
+			'nextSelector' => null,
+			'prevSelector' => null,
+			'autoControls' => '', //false,
+			'autoControls' => '', //false,
+			'startText' => 'Start',
+			'stopText' => 'Stop',
+			'autoControlsCombine' => '', //false,
+			'autoControlsSelector' => null,
+			'keyboardEnabled' => '', //false,
+
+			'auto' => '', //false,
+			'stopAutoOnClick' => '', //false,
+			'pause' => 4000,
+			'autoStart' => 1, //true
+			'autoDirection' => 'next',
+			'autoHover' => '', //false,
+			'autoDelay' => 0,
+			'minSlides' => 1,
+			'maxSlides' => 1,
+			'moveSlides' => 0,
+			'slideWidth' => 0,
+			'shrinkItems' => '', //false,
+
+			'keyboardEnabled' => '', //false,					
+
+			'ariaLive' => 1, //true
+			'ariaHidden' => 1, //true
+		);
+
+		$setOptions = array();
+
+		foreach($defaultOptions as $key => $value) {
+			if ($bxSlider->$key != $value) {
+				$setOptions[$key] = json_encode($bxSlider->$key);
+			}
+		}
+
+		return $setOptions;
+	}
+
 	static public function parseSlides($model)
 	{
 
