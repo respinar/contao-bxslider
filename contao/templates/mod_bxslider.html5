@@ -5,142 +5,30 @@
 <?php if (empty($this->slides)): ?>
     <p class="noslide"><?= $this->empty; ?></p>
   <?php else: ?>
-    <ul class="bxslider">
+    <div id="<?= $this->sliderId ?>" class="bx-slider">
       <?php echo implode('', $this->slides); ?>
-    </ul>
+  </div>
+
+    <?php if ($this->thumbnails): ?>
+      <?php $counter = 0 ?>
+      <div id="<?= $this->thumbnailId ?>" class="bx-pager">
+        <?php foreach($this->thumbnails as $thumbnail): ?>
+        <a data-slide-index="<?= $counter ?>" href=""><?= $thumbnail ?></a>
+        <?php $counter += 1 ?>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
 
 
 <script>
-  $('.bxslider').bxSlider({
-    <?php if ($this->bx_mode != 'horizontal'): ?>
-      mode: '<?= $this->bx_mode ?>',
-    <?php endif; ?>
-    <?php if ($this->bx_speed != 500): ?>
-      speed: <?= $this->bx_speed ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_slideMargin): ?>
-      slideMargin: <?= $this->bx_slideMargin ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_startSlide): ?>
-      slideMargin: <?= $this->bx_startSlide ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_randomStart): ?>
-      randomStart: true,
-    <?php endif; ?>
-    <?php if (!$this->bx_infiniteLoop): ?>
-      infiniteLoop: false,
-    <?php endif; ?>
-    <?php if ($this->bx_hideControlOnEnd && !$this->bx_infiniteLoop): ?>
-      hideControlOnEnd: true,
-    <?php endif; ?>
-    <?php if ($this->bx_easing): ?>
-      easing: '<?= $this->bx_easing ?>',
-    <?php endif; ?>
-    <?php if ($this->bx_captions): ?>
-      captions: true,
-    <?php endif; ?>
-    <?php if ($this->bx_ticker): ?>
-      ticker: true,
-    <?php endif; ?>
-    <?php if ($this->bx_tickerHover): ?>
-      tickerHover: true,
-    <?php endif; ?>
-    <?php if ($this->bx_adaptiveHeight): ?>
-      adaptiveHeight: true,
-    <?php endif; ?>
-    <?php if ($this->bx_adaptiveHeightSpeed != 500): ?>
-      adaptiveHeightSpeed: <?= $this->bx_adaptiveHeightSpeed ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_video): ?>
-      video: true,
-    <?php endif; ?>
-    <?php if (!$this->bx_responsive): ?>
-      adaptiveHeight: false,
-    <?php endif; ?>
-    <?php if (!$this->bx_useCSS): ?>
-      useCSS: false,
-    <?php endif; ?>
-    <?php if ($this->bx_preloadImages != 'visible'): ?>
-      preloadImages: 'all',
-    <?php endif; ?>
-    <?php if ($this->bx_touchEnabled): ?>
-      <?php if ($this->bx_swipeThreshold != 50): ?>
-        swipeThreshold: <?= $this->bx_swipeThreshold ?>,
-      <?php endif; ?>
-    <?php else: ?>
-      touchEnabled: false,
-    <?php endif; ?>
-
-    <?php if (!$this->bx_oneToOneTouch): ?>
-      oneToOneTouch: false,
-    <?php endif; ?>
-    <?php if (!$this->bx_preventDefaultSwipeX): ?>
-      preventDefaultSwipeX: false,
-    <?php endif; ?>
-    <?php if ($this->bx_preventDefaultSwipeY): ?>
-      preventDefaultSwipeY: true,
-    <?php endif; ?>
-    <?php if ($this->bx_pager): ?>
-      <?php if ($this->bx_pagerType != 'full'): ?>
-        pagerType: 'short',
-      <?php endif; ?>
-    <?php else: ?>
-      pager: false,
-    <?php endif; ?>
-    <?php if ($this->bx_controls): ?>
-      <?php if ($this->bx_nextText != 'Next'): ?>
-        nextText: '<?= $this->bx_nextText ?>',
-      <?php endif; ?>
-      <?php if ($this->bx_prevText != 'Prev'): ?>
-        prevText: '<?= $this->bx_prevText ?>',
-      <?php endif; ?>
-    <?php else: ?>
-      controls: false,
-    <?php endif; ?>
-    <?php if ($this->bx_autoControls): ?>
-      autoControls: true,
-      <?php if ($this->bx_startText != 'Start'): ?>
-        startText: '<?= $this->bx_startText ?>',
-      <?php endif; ?>
-      <?php if ($this->bx_stopText != 'Stop'): ?>
-        stopText: '<?= $this->bx_stopText ?>',
-      <?php endif; ?>
-      <?php if ($this->bx_autoControlsCombine): ?>
-        autoControlsCombine: true,
-      <?php endif; ?>
-    <?php endif; ?>
-    <?php if ($this->bx_auto): ?>
-      auto: true,
-    <?php endif; ?>
-    <?php if ($this->bx_pause != 4000): ?>
-      pause: <?= $this->bx_pause ?>,
-    <?php endif; ?>
-    <?php if (!$this->bx_autoStart): ?>
-      autoStart: false,
-    <?php endif; ?>
-    <?php if ($this->bx_autoDirection != 'next'): ?>
-      autoDirection: 'prev',
-    <?php endif; ?>
-    <?php if ($this->bx_autoHover): ?>
-      autoHover: true,
-    <?php endif; ?>
-    <?php if ($this->bx_autoDelay): ?>
-      autoDelay: <?= $this->bx_autoDelay ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_minSlides > 1): ?>
-      minSlides: <?= $this->bx_minSlides ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_maxSlides > 1): ?>
-      maxSlides: <?= $this->bx_maxSlides ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_moveSlides !=0 && $this->bx_moveSlides > $this->bx_minSlides && $this->bx_moveSlides < $this->bx_maxSlides): ?>
-      moveSlides: <?= $this->bx_moveSlides ?>,
-    <?php endif; ?>
-    <?php if ($this->bx_slideWidth !=0): ?>
-      slideWidth: <?= $this->bx_slideWidth ?>,
-    <?php endif; ?>
-
-
+$(function(){$('#<?= $this->sliderId ?>').bxSlider({
+  <?php
+   foreach($this->options as $option => $value) {
+    echo $option . ':' . $value . ',';
+   }
+  ?>
+  <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>' <?php endif; ?>
+  });
   });
 </script>
 
