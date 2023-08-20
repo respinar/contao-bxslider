@@ -21,65 +21,15 @@
 
 
 <script>  
-$(function(){
-  $('#<?= $this->sliderId ?>').bxSlider({
-    <?php if ($this->mode != 'horizontal'): ?> mode: '<?= $this->mode ?>', <?php endif; ?>
-    <?php if ($this->speed != 500): ?> speed: <?= $this->speed ?>, <?php endif; ?>
-    <?php if ($this->slideMargin): ?> slideMargin: <?= $this->slideMargin ?>, <?php endif; ?>
-    <?php if ($this->startSlide): ?> slideMargin: <?= $this->startSlide ?>, <?php endif; ?>
-    <?php if ($this->randomStart): ?> randomStart: true, <?php endif; ?>
-    <?php if (!$this->infiniteLoop): ?> infiniteLoop: false, <?php endif; ?>
-    <?php if ($this->hideControlOnEnd && !$this->infiniteLoop): ?> hideControlOnEnd: true, <?php endif; ?>
-    <?php if ($this->easing): ?> easing: '<?= $this->easing ?>', <?php endif; ?>
-    <?php if ($this->captions): ?> captions: true, <?php endif; ?>
-    <?php if ($this->ticker): ?> ticker: true, <?php endif; ?>
-    <?php if ($this->tickerHover): ?> tickerHover: true, <?php endif; ?>
-    <?php if ($this->adaptiveHeight): ?> adaptiveHeight: true, <?php endif; ?>
-    <?php if ($this->adaptiveHeightSpeed != 500): ?> adaptiveHeightSpeed: <?= $this->adaptiveHeightSpeed ?>, <?php endif; ?>
-    <?php if ($this->video): ?> video: true, <?php endif; ?>
-    <?php if (!$this->responsive): ?> adaptiveHeight: false, <?php endif; ?>
-    <?php if (!$this->useCSS): ?> useCSS: false, <?php endif; ?>
-    <?php if ($this->preloadImages != 'visible'): ?> preloadImages: 'all', <?php endif; ?>
-
-    <?php if ($this->touchEnabled): ?>
-      <?php if ($this->swipeThreshold != 50): ?> swipeThreshold: <?= $this->swipeThreshold ?>, <?php endif; ?>
-    <?php else: ?> touchEnabled: false, <?php endif; ?>
-
-    <?php if (!$this->oneToOneTouch): ?> oneToOneTouch: false, <?php endif; ?>
-    <?php if (!$this->preventDefaultSwipeX): ?> preventDefaultSwipeX: false, <?php endif; ?>
-    <?php if ($this->preventDefaultSwipeY): ?> preventDefaultSwipeY: true, <?php endif; ?>
-
-    <?php if ($this->pager): ?> 
-      <?php if ($this->pagerType != 'full'): ?> pagerType: 'short', <?php endif; ?>
-    <?php else: ?> pager: false, <?php endif; ?>
-
-    <?php if ($this->controls): ?>
-      <?php if ($this->nextText != 'Next'): ?> nextText: '<?= $this->nextText ?>', <?php endif; ?>
-      <?php if ($this->prevText != 'Prev'): ?> prevText: '<?= $this->prevText ?>', <?php endif; ?>
-    <?php else: ?> controls: false, <?php endif; ?>
-      
-    <?php if ($this->autoControls): ?>
-      autoControls: true,
-      <?php if ($this->startText != 'Start'): ?> startText: '<?= $this->startText ?>', <?php endif; ?>
-      <?php if ($this->stopText != 'Stop'): ?> stopText: '<?= $this->stopText ?>', <?php endif; ?>
-      <?php if ($this->autoControlsCombine): ?> autoControlsCombine: true, <?php endif; ?>
-    <?php endif; ?>
-    <?php if ($this->auto): ?> auto: true, <?php endif; ?>
-    <?php if ($this->pause != 4000): ?> pause: <?= $this->pause ?>, <?php endif; ?>
-    <?php if (!$this->autoStart): ?> autoStart: false, <?php endif; ?>
-    <?php if ($this->autoDirection != 'next'): ?> autoDirection: 'prev', <?php endif; ?>
-    <?php if ($this->autoHover): ?> autoHover: true, <?php endif; ?>
-    <?php if ($this->autoDelay): ?> autoDelay: <?= $this->autoDelay ?>, <?php endif; ?>
-    <?php if ($this->minSlides > 1): ?> minSlides: <?= $this->minSlides ?>, <?php endif; ?>
-    <?php if ($this->maxSlides > 1): ?> maxSlides: <?= $this->maxSlides ?>, <?php endif; ?>
-    <?php if ($this->moveSlides !=0 && $this->moveSlides > $this->minSlides && $this->moveSlides < $this->maxSlides): ?> 
-      moveSlides: <?= $this->moveSlides ?>,
-    <?php endif; ?>
-    <?php if ($this->slideWidth !=0): ?> slideWidth: <?= $this->slideWidth ?>, <?php endif; ?>
-    
-    <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>', <?php endif; ?>
+$(function(){$('#<?= $this->sliderId ?>').bxSlider({
+  <?php 
+   foreach($this->options as $option => $value) {
+    echo $option . ':' . $value . ',';
+   }
+  ?>
+  <?php if ($this->thumbnails): ?> pagerCustom: '#<?= $this->thumbnailId ?>' <?php endif; ?>
   });
-});
+  });
 </script>
 
 <?php endif; ?>
