@@ -5,9 +5,9 @@
 <?php if (empty($this->slides)): ?>
     <p class="noslide"><?= $this->empty; ?></p>
   <?php else: ?>
-    <ul id="<?= $this->sliderId ?>" class="bx-slider">
+    <div id="<?= $this->sliderId ?>" class="bx-slider">
       <?php echo implode('', $this->slides); ?>
-    </ul>
+  </div>
 
     <?php if ($this->thumbnails): ?>
       <?php $counter = 0 ?>
