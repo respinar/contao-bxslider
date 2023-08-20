@@ -20,28 +20,39 @@ class BxsliderController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
-        $intTotal = BxsliderSlideModel::countPublishedByPid($model->bx_slider);
-
-		if ($intTotal < 1)
+        if ($model->bxSlider_items == null)
 		{
-			$template->empty = $GLOBALS['TL_LANG']['MSC']['bxslider_noSlide'];
+            $template->empty = $GLOBALS['TL_LANG']['MSC']['bxslider_noSlide'];
 
 			return $template->getResponse();
 		}
 
-		$objbxSlider = BxsliderModel::findBy('id',$model->bx_slider);
-
-		$template->setData($objbxSlider->row());
-
-		$objSlides = BxsliderSlideModel::findPublishedByPid($model->bx_slider);
-
-		// No items found
-		if ($objSlides !== null)
-		{
-			$bxSlider = new BxsliderParser();
-
-			$template->slides = $bxSlider->parseSlides($objSlides, $model);
+		if ($model->bxSlider != 0) {
+			$objBxSlider = BxsliderModel::findBy('id',$model->bxSlider);
+			$template->options = BxsliderParser::setOptions($objBxSlider);
+		} else {
+			$template->options = null;
 		}
+
+		$template->sliderId = 'bxslider-' . strval($model->id);
+		$template->thumbnailId = 'bxpager-' . strval($model->id);
+
+		//No items found
+		if ($model->bxSlider_items !== null)
+		{
+			//$model->imgSize = $model->size;
+
+			$template->slides = BxsliderParser::parseSlides($model);
+
+			if ($model->bxSlider_thumbnail) {
+				$model->imgSize = $model->bxSlider_thumbnailSize;
+
+				$template->thumbnails = BxsliderParser::parseSlides($model);
+			}
+		}
+
+		$GLOBALS['TL_BODY'][] = Template::generateScriptTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.js', false, null);
+        $GLOBALS['TL_BODY'][] = Template::generateStyleTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.css', false, null);
 
         return $template->getResponse();
     }
