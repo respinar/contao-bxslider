@@ -3,7 +3,7 @@
 /*
  * This file is part of Contao bxSlider Bundle.
  *
- * (c) Hamid Peywasti 2023 <abbaszadeh.h@gmail.com>
+ * (c) Hamid Peywasti 2023 <hamid.peywasti@gmail.com>
  *
  * @license MIT
  */
