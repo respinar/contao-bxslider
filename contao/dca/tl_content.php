@@ -33,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bxSlider'] = array
 	'inputType'        => 'select',
 	'foreignKey'       => 'tl_bxslider.title',
 	'eval'             => array('multiple'=>false, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
-	'sql'			   => "int(10) unsigned NOT NULL default '0'",
+	'sql'			   => "int(10) unsigned NOT NULL default 0",
 );
 
 

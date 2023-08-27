@@ -122,7 +122,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 		),
 		'tstamp' => array
 		(
-			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+			'sql'                     => "int(10) unsigned NOT NULL default 0"
 		),
 		'title' => array
 		(
@@ -147,7 +147,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 500,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '500'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 500"
 		),
 
 		'slideMargin' =>  array
@@ -156,7 +156,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 0,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 0"
 		),
 
 		'startSlide' =>  array
@@ -165,16 +165,15 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 0,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 0"
 		),
 
 		'randomStart' =>  array
 		(
 			'exclude'                 => true,
-			'default'                 => false,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'infiniteLoop' =>  array
@@ -183,16 +182,15 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'hideControlOnEnd' =>  array
 		(
 			'exclude'                 => true,
-			'default'                 => false,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'easing' =>  array
@@ -209,7 +207,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'ticker' =>  array
@@ -217,7 +215,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr', 'submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'tickerHover' =>  array
@@ -225,14 +223,14 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 		'adaptiveHeight' =>  array
 		(
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr m12', 'submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 		'adaptiveHeightSpeed' =>  array
 		(
@@ -240,7 +238,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'inputType'               => 'text',
 			'default'                 => 500,
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '500'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 500"
 		),
 
 		'video' =>  array
@@ -248,7 +246,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'responsive' =>  array
@@ -257,7 +255,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'useCSS' =>  array
@@ -266,7 +264,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'preloadImages' =>  array
@@ -285,7 +283,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr m12', 'submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'swipeThreshold' =>  array
@@ -294,7 +292,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 50,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '50'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 50"
 		),
 
 		'oneToOneTouch' =>  array
@@ -303,7 +301,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'preventDefaultSwipeX' =>  array
@@ -312,16 +310,15 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'preventDefaultSwipeY' =>  array
 		(
 			'exclude'                 => true,
-			'default'                 => false,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		/* Pager */
@@ -331,7 +328,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50','submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'pagerType' =>  array
@@ -361,7 +358,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50','submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'nextText' =>  array
@@ -389,13 +386,12 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50 clr','submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'startText' =>  array
 		(
 			'exclude'                 => true,
-			'search'                  => true,
 			'default'                 => 'Start',
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50 clr'),
@@ -405,7 +401,6 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 		'stopText' =>  array
 		(
 			'exclude'                 => true,
-			'search'                  => true,
 			'default'                 => 'Stop',
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50'),
@@ -417,7 +412,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50','submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		/* Auto */
@@ -426,7 +421,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50','submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'pause' =>  array
@@ -435,7 +430,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 4000,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '4000'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 4000"
 		),
 
 		'autoStart' =>  array
@@ -444,7 +439,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'autoDirection' =>  array
@@ -463,7 +458,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'autoHover' =>  array
@@ -471,7 +466,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'autoDelay' =>  array
@@ -479,7 +474,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 0"
 		),
 
 		/* Carousel */
@@ -489,7 +484,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 1,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '1'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 1"
 		),
 
 		'maxSlides' =>  array
@@ -498,7 +493,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 1,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '1'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 1"
 		),
 
 		'moveSlides' =>  array
@@ -507,7 +502,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 0,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 0"
 		),
 		'slideWidth' =>  array
 		(
@@ -515,7 +510,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => 0,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'natural', 'tl_class'=>'w50'),
-			'sql'                     => "smallint(5) unsigned NOT NULL default '0'"
+			'sql'                     => "smallint(5) unsigned NOT NULL default 0"
 		),
 
 		'thumbnail' => array
@@ -542,7 +537,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 
 		'ariaLive' =>  array
@@ -551,7 +546,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 		'ariaHidden' =>  array
 		(
@@ -559,7 +554,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'default'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default '1'"
+			'sql'                     => array('type' => 'boolean', 'default' => true)
 		),
 
 		'wrapperClass' =>  array
@@ -576,7 +571,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
+			'sql'                     => array('type' => 'boolean', 'default' => false)
 		),
 		'groups' => array
 		(
