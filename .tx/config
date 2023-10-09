@@ -1,3 +1,39 @@
 [main]
 host = https://app.transifex.com
 
+[o:respinar:p:contao-bxslider:r:default]
+file_filter            = contao/languages/<lang>/default.xlf
+source_file            = contao/languages/en/default.xlf
+type                   = XLIFF
+minimum_perc           = 0
+resource_name          = Default
+replace_edited_strings = false
+keep_translations      = false
+
+[o:respinar:p:contao-bxslider:r:tl_bxslider]
+file_filter            = contao/languages/<lang>/tl_bxslider.xlf
+source_file            = contao/languages/en/tl_bxslider.xlf
+type                   = XLIFF
+minimum_perc           = 0
+resource_name          = tl_bxslider
+replace_edited_strings = false
+keep_translations      = false
+
+[o:respinar:p:contao-bxslider:r:tl_content]
+file_filter            = contao/languages/<lang>/tl_content.xlf
+source_file            = contao/languages/en/tl_content.xlf
+type                   = XLIFF
+minimum_perc           = 0
+resource_name          = tl_content
+replace_edited_strings = false
+keep_translations      = false
+
+[o:respinar:p:contao-bxslider:r:tl_module]
+file_filter            = contao/languages/<lang>/tl_module.xlf
+source_file            = contao/languages/en/tl_module.xlf
+type                   = XLIFF
+minimum_perc           = 0
+resource_name          = tl_module
+replace_edited_strings = false
+keep_translations      = false
+
