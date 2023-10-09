@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="vendor/respinar/contao-bxslider/contao/languages/en/tl_content.php" source-language="en">
+    <body>
+      <trans-unit id="tl_content.bxSlider.0">
+        <source>bxSlider Config</source>
+      </trans-unit>
+      <trans-unit id="tl_content.bxSlider.1">
+        <source>Select a configration.</source>
+      </trans-unit>
+      <trans-unit id="tl_content.bxSlider_template.0">
+        <source>Slide template</source>
+      </trans-unit>
+      <trans-unit id="tl_content.bxSlider_template.1">
+        <source>Select slide template.</source>
+      </trans-unit>
+      <trans-unit id="tl_content.bx_slider_legend">
+        <source>Slider</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
