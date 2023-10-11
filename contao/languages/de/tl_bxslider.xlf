@@ -1,0 +1,367 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="vendor/respinar/contao-bxslider/contao/languages/en/tl_bxslider.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_bxslider.title.0">
+        <source>Title</source>
+        <target>Titel</target>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.title.1">
+        <source>Please enter the bxSlider title.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.mode.0">
+        <source>Mode</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.mode.1">
+        <source>Type of transition between slides.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.speed.0">
+        <source>Speed</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.speed.1">
+        <source>Slide transition duration (in ms).</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.slideMargin.0">
+        <source>Slide margin</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.slideMargin.1">
+        <source>Margin between each slide.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.startSlide.0">
+        <source>Start slide</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.startSlide.1">
+        <source>Starting slide index (zero-based)</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.randomStart.0">
+        <source>Random start</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.randomStart.1">
+        <source>Start slider on a random slide</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.infiniteLoop.0">
+        <source>Infinite loop</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.infiniteLoop.1">
+        <source>If checked, clicking &quot;Next&quot; while on the last slide will transition to the first slide and vice-versa</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.hideControlOnEnd.0">
+        <source>Hide control on end</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.hideControlOnEnd.1">
+        <source>If checked, &quot;Next&quot; control will be hidden on last slide and vice-versa. Note: Only used when infiniteLoop: false</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.easing.0">
+        <source>Easing</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.easing.1">
+        <source>The type of &quot;easing&quot; to use during transitions.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.captions.0">
+        <source>Captions</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.captions.1">
+        <source>Include image captions. Captions are derived from the image's title attribute</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.video.0">
+        <source>Video</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.video.1">
+        <source>If any slides contain video, set this to checked. Also, include plugins/jquery.fitvids.js</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ticker.0">
+        <source>Ticker</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ticker.1">
+        <source>Use slider in ticker mode (similar to a news ticker)</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.tickerHover.0">
+        <source>Ticker hover</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.tickerHover.1">
+        <source>Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions!</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.adaptiveHeight.0">
+        <source>Adaptive height</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.adaptiveHeight.1">
+        <source>Dynamically adjust slider height based on each slide's height</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.adaptiveHeightSpeed.0">
+        <source>Adaptive height speed</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.adaptiveHeightSpeed.1">
+        <source>Slide height transition duration (in ms). Note: only used if adaptiveHeight: true</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.responsive.0">
+        <source>Responsive</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.responsive.1">
+        <source>Enable or disable auto resize of the slider. Useful if you need to use fixed width sliders.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.useCSS.0">
+        <source>Use CSS</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.useCSS.1">
+        <source>If checked, CSS transitions will be used for horizontal and vertical slide animations (this uses native hardware acceleration). If false, jQuery animate() will be used.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preloadImages.0">
+        <source>Preload images</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preloadImages.1">
+        <source>If 'all', preloads all images before starting the slider. If 'visible', preloads only images in the initially visible slides before starting the slider (tip: use 'visible' if all slides are identical dimensions)</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.touchEnabled.0">
+        <source>touch enabled</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.touchEnabled.1">
+        <source>If checked, slider will allow touch swipe transitions</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.swipeThreshold.0">
+        <source>Swipe threshold</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.swipeThreshold.1">
+        <source>Amount of pixels a touch swipe needs to exceed in order to execute a slide transition. Note: only used if touchEnabled: true</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.oneToOneTouch.0">
+        <source>One to one touch</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.oneToOneTouch.1">
+        <source>If checked, non-fade slides follow the finger as it swipes</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preventDefaultSwipeX.0">
+        <source>Prevent default swipe X</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preventDefaultSwipeX.1">
+        <source>If checked, touch screen will not move along the x-axis as the finger swipes</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preventDefaultSwipeY.0">
+        <source>Prevent default swipe Y</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.preventDefaultSwipeY.1">
+        <source>If checked, touch screen will not move along the y-axis as the finger swipes</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pager.0">
+        <source>Pager</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pager.1">
+        <source>If checked, a pager will be added</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pagerType.0">
+        <source>Pager type</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pagerType.1">
+        <source>If 'full', a pager link will be generated for each slide. If 'short', a x / y pager will be used (ex. 1 / 5)</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pagerShortSeparator.0">
+        <source>Pager short separator</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pagerShortSeparator.1">
+        <source>If pagerType: 'short', pager will use this value as the separating character</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.controls.0">
+        <source>Controls</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.controls.1">
+        <source>If checked, &quot;Next&quot; / &quot;Prev&quot; controls will be added</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.nextText.0">
+        <source>Next text</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.nextText.1">
+        <source>Text to be used for the &quot;Next&quot; control</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.prevText.0">
+        <source>Prev text</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.prevText.1">
+        <source>Text to be used for the &quot;Prev&quot; control</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoControls.0">
+        <source>Auto controls</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoControls.1">
+        <source>If checked, &quot;Start&quot; / &quot;Stop&quot; controls will be added</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.startText.0">
+        <source>Start text</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.startText.1">
+        <source>Text to be used for the &quot;Start&quot; control</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.stopText.0">
+        <source>Stop text</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.stopText.1">
+        <source>Text to be used for the &quot;Stop&quot; control</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoControlsCombine.0">
+        <source>Auto controls combine</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoControlsCombine.1">
+        <source>When slideshow is playing only &quot;Stop&quot; control is displayed and vice-versa</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.auto.0">
+        <source>Auto</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.auto.1">
+        <source>Slides will automatically transition</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pause.0">
+        <source>Pause</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pause.1">
+        <source>The amount of time (in ms) between each auto transition</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoStart.0">
+        <source>Auto pause</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoStart.1">
+        <source>Auto show starts playing on load. If false, slideshow will start when the &quot;Start&quot; control is clicked</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoDirection.0">
+        <source>Auto direction</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoDirection.1">
+        <source>The direction of auto show slide transitions</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoHover.0">
+        <source>Auto hover</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoHover.1">
+        <source>Auto show will pause when mouse hovers over slider</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoDelay.0">
+        <source>Auto delay</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.autoDelay.1">
+        <source>Time (in ms) auto show should wait before starting</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.minSlides.0">
+        <source>Min slides</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.minSlides.1">
+        <source>The minimum number of slides to be shown. Slides will be sized down if carousel becomes smaller than the original size.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.maxSlides.0">
+        <source>Max slides</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.maxSlides.1">
+        <source>The maximum number of slides to be shown. Slides will be sized up if carousel becomes larger than the original size.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.moveSlides.0">
+        <source>Move slides</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.moveSlides.1">
+        <source>The number of slides to move on transition. This value must be &gt;= minSlides, and &amp;lt;= maxSlides. If zero (default), the number of fully-visible slides will be used.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.slideWidth.0">
+        <source>Slide width</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.slideWidth.1">
+        <source>The width of each slide. This setting is required for all horizontal carousels!</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ariaLive.0">
+        <source>Aria Live attribute</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ariaLive.1">
+        <source>Adds Aria Live attribute to slider.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ariaHidden.0">
+        <source>Aria Hidden attribute</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.ariaHidden.1">
+        <source>Adds Aria Hidden attribute to any nonvisible slides.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.wrapperClass.0">
+        <source>Wrapper class</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.wrapperClass.1">
+        <source>Class to wrap the slider in. Change to prevent from using default bxSlider styles.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.keyboardEnabled.0">
+        <source>Keyboard</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.keyboardEnabled.1">
+        <source>Allows for keyboard control of visible slider. Keypress ignored if slider not visible.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.protected.0">
+        <source>Protect bxSlider</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.protected.1">
+        <source>Show bxSlider slides to certain member groups only.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.groups.0">
+        <source>Allowed member groups</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.groups.1">
+        <source>These groups will be able to see the bxSlider slides in this bxSlider.</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.title_legend">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.options_legend">
+        <source>Slider options</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.pager_legend">
+        <source>Pager options</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.controls_legend">
+        <source>Controls options</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.auto_legend">
+        <source>Autopaly options</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.carousel_legend">
+        <source>Carousel options</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.keyboard_legend">
+        <source>Keyboard</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.aria_legend">
+        <source>Accessibility</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.class_legend">
+        <source>Classes</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.protected_legend">
+        <source>Access protection</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.new.0">
+        <source>New bxSlider config</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.new.1">
+        <source>Add a new bxSlider config</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.edit.0">
+        <source>Edit bxSlider</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.edit.1">
+        <source>Edit bxSlider ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.editheader.0">
+        <source>Edit bxSlider settings</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.editheader.1">
+        <source>Edit bxSlider settings ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.copy.0">
+        <source>Copy bxSlider</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.copy.1">
+        <source>Copy bxSlider ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.delete.0">
+        <source>Delete bxSlider</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.delete.1">
+        <source>Delete bxSlider ID %s</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.show.0">
+        <source>bxSlider details</source>
+      </trans-unit>
+      <trans-unit id="tl_bxslider.show.1">
+        <source>Show the details of bxSlider ID %s</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
