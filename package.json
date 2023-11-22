@@ -1,0 +1,12 @@
+{
+  "name": "contao-bxslider",
+  "version": "1.0.0",
+  "description": "This is a simple to use extension for add slider to Contao.",
+  "scripts": {
+    "postinstall": "cp -r node_modules/bxslider/dist/* public/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bxslider": "^4.2.14"
+  }
+}
