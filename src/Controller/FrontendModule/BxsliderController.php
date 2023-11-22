@@ -58,8 +58,8 @@ class BxsliderController extends AbstractFrontendModuleController
 			}
 		}
 
-		$GLOBALS['TL_BODY'][] = Template::generateScriptTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.js', false, null);
-        $GLOBALS['TL_BODY'][] = Template::generateStyleTag('bundles/respinarbxslider/jquery.bxslider/jquery.bxslider.min.css', false, null);
+		$GLOBALS['TL_BODY'][] = Template::generateScriptTag('bundles/respinarbxslider/jquery.bxslider.min.js', false, null);
+        $GLOBALS['TL_BODY'][] = Template::generateStyleTag('bundles/respinarbxslider/jquery.bxslider.min.css', false, null);
 
         return $template->getResponse();
     }
