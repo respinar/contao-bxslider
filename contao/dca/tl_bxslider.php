@@ -10,7 +10,7 @@
 
 use Contao\System;
 use Contao\BackendUser;
-
+use Contao\DC_Table;
 
 /**
  * Table tl_bxslider
@@ -21,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_bxslider'] = array
 	// Config
 	'config' => array
 	(
-		'dataContainer'               => 'Table',
+		'dataContainer'               => DC_Table::class,
 		'enableVersioning'            => true,
 		'sql' => array
 		(
