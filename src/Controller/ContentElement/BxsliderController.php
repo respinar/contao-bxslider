@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Respinar\BxsliderBundle\Controller\BxsliderParser;
 use Respinar\BxsliderBundle\Model\BxsliderModel;
 
-#[AsContentElement(category: 'slider')]
+#[AsContentElement(category: 'slider', template: 'ce_bxslider')]
 class BxsliderController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
