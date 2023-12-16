@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Respinar\BxsliderBundle\Controller\BxsliderParser;
 use Respinar\BxsliderBundle\Model\BxsliderModel;
 
-#[AsFrontendModule(category: 'slider')]
+#[AsFrontendModule(category: 'slider', template: 'mod_bxslider')]
 class BxsliderController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
